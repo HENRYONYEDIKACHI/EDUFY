@@ -1,0 +1,2 @@
+# EDUFY
+Solving educational problems
