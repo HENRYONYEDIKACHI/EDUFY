@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.notifs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    position: fixed;
+}
+.notifCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    /* padding: 2%; */
+    top: 3em;
+    bottom: 3em;
+    overflow-y: scroll;
+    /* background-color: rgba(50, 50, 120, .6); */
+}
+.headArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    background-color: white;
+}
+.sectionHead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    /* border-bottom: 1px solid rgba(0,0,0, .05); */
+}
+.activitySectionHead {}
+.bookmarkSectionHead {}
+.sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 2%;
+    background-color: white;
+}
+.activitySection {}
+.bookmarkSection {}
+.notifItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    border: 0.5px solid rgba(0, 0, 0, .05)
+}
+.notifOptBar {
+    display: flex;
+    justify-content: space-between;
+}
+.read {
+    display: flex;
+}
+.markread {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* width: 6em; */
+    height: 90%;
+}

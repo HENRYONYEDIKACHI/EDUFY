@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Roboto 'Times New Roman';
+    text-decoration: none;
+    /* webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+}
+.appBase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0, .1);
+    position: relative;
+    text-decoration: none;
+    /* webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+}

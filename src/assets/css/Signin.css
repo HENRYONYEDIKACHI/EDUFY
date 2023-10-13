@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Courier New;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.signin-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+    width: 90%;
+    padding: 5% 0;
+    background-color: white;
+}
+.logintxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    /* color: rgb(0, 128, 128); */
+    /* border: 1px solid black; */
+}
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.signin-fields {
+    width: 90%;
+    height: 4em;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1%;
+    padding: 0 2%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    /* background-color: rgba(100, 100, 100, .1); */
+}
+.signin-fields:focus {
+    border-bottom: 1px solid rgb(0, 128, 128);
+    background-color: rgba(0,128,128,.05);
+}
+.signin-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 8em;
+    margin-bottom: auto;
+    background-color: white;
+}
+.signin-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 4em;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    padding: none;
+    border: none;
+    outline: none;
+    background-color: rgb(0, 128, 128);
+}
+.signin-btn:active {
+    /* color: teal; */
+    background-color: rgba(0,128,128,.2);
+}
+.others {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    font-weight: bold;
+    /* border: 1px solid black; */
+}
+.otherOpts {
+    color: grey;
+    text-decoration: none;
+    text-decoration-color: grey;
+    /* webkit-highlight: teal; */
+    /* webkit-tap-highlight-color: teal; */
+}
+.otherOpts:active {
+    color: teal;
+    border: 1px solid rgb(0, 128, 128);
+    webkit-highlight: teal;
+    webkit-tap-highlight-color: teal;
+}
+.otherOpts:visited {
+    color: rgb(0, 128, 128, .);
+    border: 1px solid rgb(0, 128, 128);
+    webkit-highlight: teal;
+    webkit-tap-highlight-color: teal;
+}

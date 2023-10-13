@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.bottomNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3em;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+.tabLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    /* border: 1px solid black; */
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.tabLinks:active {
+    background-color: rgba(0, 128, 128, .2);
+}

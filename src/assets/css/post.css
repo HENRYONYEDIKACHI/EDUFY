@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.postView {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 3.5em;
+    /* position: relative; */
+    position: fixed;
+    overflow-y: scroll;
+}
+.viewHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    /* top: 0; */
+    /* bottom: 3.5em; */
+    position: fixed;
+}
+.viewHead {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    background-color: white;
+    /* position: relative; */
+}
+.viewIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+}
+.toggle-cmt-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    height: 3em;
+    border-radius: 50px;
+    background-color: teal;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}

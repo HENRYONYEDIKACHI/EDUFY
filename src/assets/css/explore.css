@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 15px;
+}
+.explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+.expCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    /* padding: 1% 2%; */
+    top: 3em;
+    bottom: 3em;
+    overflow-y: scroll;
+}
+.searchTab {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+    padding: 1%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    background-color: white;
+}
+.dummyBar {
+    width: 19em;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 22px;
+    padding: 0 4%;
+    background-color: rgba(0,0,0,.05);
+}
+.searchOptBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 100%;
+    border: 1px ssolid black;
+}
+.works {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 2em;
+    padding: 2%;
+    /* border-bottom: 1px solid rgba(0,0,0,.1); */
+    background-color: white;
+}
+.gigs-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 98%;
+    height: 20em;
+    margin: 1%;
+    border: .8px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+    background-color: rgba(255,255,255,.5);
+}
+.gigs-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    border-top: .5px solid rgba(0,0,0,.1);
+    border-radius: 0 0 5px 5px;
+    background-color: rgba(255,255,255,.8);
+}
+.gigs-header {
+    font-size: 1.5em;
+    /* border: 1px solid black; */
+}
+.gigs-txt {
+    width: 100%;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.commDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+    background-color: white;
+    position: relative;
+}
+.commGrp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    /* border: 1px solid pink; */
+    position: relative;
+}
+.commGrp::-webkit-scrollbar {
+    display: none;
+}
+.commItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 3em;
+    max-height: 14em;
+    min-width: 16em;
+    max-width: 20em;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    margin: 0 0.5%;
+    padding: 1%;
+}
+.commItemCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.commItemImg {
+    width: 100%;
+    height: 100%;
+}
+.commItemTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+}
+.searchPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 4;
+}
+.searchBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3em;
+    width: 100%;
+    padding: 1%;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.closeBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+.inputArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+.searchBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    padding: 4%;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: rgba(0, 0, 0, .05);
+}
+.searchBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 4em;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(0, 0, 0, .05);
+}
+.quickResults {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.quickResults > h3, .searchHistory > h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.quickResultItems {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    /* border: 1px solid black; */
+}
+.searchHistory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.historyItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    /* border: 1px solid black; */
+}

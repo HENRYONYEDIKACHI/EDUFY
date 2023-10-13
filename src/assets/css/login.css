@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Courier New;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.formCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 25em;
+    width: 96%;
+    background-color: white;
+    /* border: 1px solid rgb(0, 128, 128); */
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 1px rgb(0, 128, 128, .1);
+    z-index: 3;
+}
+.logintxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(0, 128, 128);
+    /* border: 1px solid black; */
+}
+.signInForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 15em;
+    /* border: 1px solid black; */
+}
+.formFields {
+    width: 90%;
+    height: 4em;
+    font-size: 1em;
+    font-weight: bold;
+}
+.formFields:focused {
+    outline-color: invert;
+}
+.formBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(0, 128, 128);
+}
+.formBtn:active {
+    color: teal;
+    background-color: white;
+}
+.others {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    font-weight: bold;
+    /* border: 1px solid black; */
+}
+.otherOpts {
+    color: teal;
+    text-decoration: none;
+    text-decoration-color: teal;
+    webkit-highlight: teal;
+    webkit-tap-highlight-color: teal;
+}
+.otherOpts:active {
+    color: teal;
+    border: 1px solid rgb(0, 128, 128);
+    webkit-highlight: teal;
+    webkit-tap-highlight-color: teal;
+}
+.otherOpts:visited {
+    color: teal;
+    border: 1px solid rgb(0, 128, 128);
+    webkit-highlight: teal;
+    webkit-tap-highlight-color: teal;
+}
