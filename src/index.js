@@ -34,7 +34,7 @@ const router = createBrowserRouter([
                 // path: "/",
                 index: true,
                 element: <Home />,
-                loader: postsLoader(queryClient),
+                loader: postsLoader,
                 shouldRevalidate (args){
                     console.log(args)
                     return false
@@ -104,7 +104,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={false} position="top-left" />
     </QueryClientProvider>
 );
 

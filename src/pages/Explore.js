@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { useOutletContext } from 'react-router-dom'
+import { Link, useOutletContext } from 'react-router-dom'
 import { IonIcon } from '@ionic/react'
 import { search, searchOutline, optionsOutline, closeOutline, arrowBackOutline } from 'ionicons/icons'
 
@@ -30,27 +30,28 @@ function Explore({ setPage, page }) {
         <div className="explore">
             <StatusBar />
             <div className="expCover">
-                <div className="searchTab">
-                    <input readOnly placeholder="Search" className="dummyBar" onClick={()=> toggleSearchView()} />
-                    <div className="searchOptBar">
-                        <IonIcon icon={optionsOutline} style={pageCtx.iconStyle}></IonIcon>
-                    </div>
+                <div className="page-bar">
+                <h2>Explore</h2>
+                <div className="dummyBar" onClick={()=> toggleSearchView()}>
+                    <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
                 </div>
-                {/*&nbsp;*/}
+                </div>
                 <div className="gigs-card">
                     <div className="gigs-cover">
                         <h3 className="gigs-header">Gigs and Offers</h3>
-                        <p className="gigs-txt">Do you have a job or task you want done. Click to create an advert</p>
+                        <p className="gigs-txt">Do you have a job or task you want done</p>
+                        <Link to="/explore/gigs" className="gigs-btn">View</Link>
                     </div>
                 </div>
                 <div className="gigs-card">
                     <div className="gigs-cover">
-                        <h3 className="gigs-header">Academics and Schoo;s</h3>
-                        <p className="gigs-txt">Explore other schools beaides your's. Keep up with news and updates</p>
+                        <h3 className="gigs-header">Academies and Institutions</h3>
+                        <p className="gigs-txt">Explore schools and institutions across the country</p>
+                        <Link to="/explore/institutions" className="gigs-btn">View</Link>
                     </div>
                 </div>
-                <h3 className="headTxt">Communities & Spaces</h3>
                 <div className="commDiv">
+                    <h3 className="headTxt">Communities & Spaces</h3>
                     <div className="commGrp">
                         <div className="commItem">
                             <div className="commItemCover">
@@ -89,6 +90,7 @@ function Explore({ setPage, page }) {
                             </div>
                         </div>
                     </div>
+                    <Link to="/explore/communities" className="gigs-btn">View</Link>
                 </div>
                 { searchView ? <div className="searchPage">
                     <div className="searchBar">
