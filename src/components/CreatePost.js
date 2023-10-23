@@ -171,7 +171,7 @@ function CreatePost({ toggleCreate }) {
     return (
         <div className="container">
             <div className="back-fill" onClick={()=> closeCreate()}></div>
-            <div className="page-hold">
+            <div className="create-page-hold">
                 <div className="banner">
                     <div className="user-banner">
                         <div className="avatar-cover" >

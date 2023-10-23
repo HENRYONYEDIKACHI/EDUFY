@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+/* .jobs-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: white;
+    position: relative;
+}
+.jobs-page::-webkit-scrollbar {
+    display: none;
+}
+.jobs-page-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3.5em;
+    position: fixed;
+    border-bottom: .5px solid rgba(0,128,128,.1);
+    background-color: rgba(255,255,255,1);
+}
+.jobs-bar-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: auto 1%;
+}
+.arrow-back {
+    width: 1.5em;
+    height: 1.5em;
+    margin: auto 1%;
+}
+.jobs-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15em;
+    margin-top: 3.5em;
+    border-bottom: .5px solid rgba(0,128,128,.1);
+    background-color: rgba(0,128,128,.5);
+    background-blend-mode: darken;
+}
+.banner-headers-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 3em auto;
+    padding: 2% 0;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,.1);
+}
+.banner-headers-cover> h3 {
+    font-size: 1.4em;
+    margin: 1%;
+}
+.banner-headers-cover>span {
+    margin: 1% auto;
+    font-size: 1.4em;
+}
+.banner-option-cover {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    margin: 2% auto;
+}
+.banner-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80%;
+    height: 2.5em;
+    padding: 0 1%;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 1px .5px rgba(0,0,0,.1);
+}
+.btn-1 {
+    color: white;
+    background-color: rgba(0,128,128,1);
+}
+.btn-2 {
+    background-color: white;
+    color: rgba(0,128,128,1);
+    border: 1px solid rgba(0,128,128,1);
+} */
+.jobs-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.header-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    padding: 0 2%;
+    /* border: 1px solid black; */
+}
+.header-sort>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    /* margin: auto 0; */
+    /* border: 1px solid black; */
+}
+.jobs-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1%;
+    /* background-color: rgba(0,0,0,.2); */
+}
+.gig-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    /* height: ; */
+    margin: 1% auto;
+    /* border: 1px solid black; */
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0 0 1px .5px rgba(0,0,0,.1);
+}
+.gig-item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    padding: 1%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.gig-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 2em;
+    padding: 0 1%;
+    /* font-weight: bold; */
+    /* border: 1px solid black; */
+}
+.gig-budget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2em;
+    margin: 1% 0;
+    padding: 0 1%;
+    /* font-weight: bold; */
+}
+.gig-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 2.5em;
+    margin: 2% auto;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0,128,128,1);
+    box-shadow: 0 0 1px .5px rgba(0,0,0,.1);
+}
+.no-gig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    height: 6em;
+    margin: 2% auto;
+    font-size: 1.4em;
+    box-shadow: 0 0 .5px 1px rgba(0,0,0,.1);
+}
+.gig-filter-popup {}

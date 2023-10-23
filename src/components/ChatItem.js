@@ -17,7 +17,7 @@ function ChatItem({ chatitem }) {
     }
     
     return (
-        <Link className="listItem" to={`/user/${authCtx.user.username}/chat/${chatitem.id}/${chatitem.name}`} >
+        <Link className="listItem" to={`/chat/${chatitem.id}/`} >
             <div className="chavatarCover" >
                 <img className="chavatar" src={bsks} />
             </div>

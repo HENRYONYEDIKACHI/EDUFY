@@ -8,7 +8,7 @@ import BottomNav from '../components/BottomNav'
 
 import '../assets/css/explore.css'
 
-function Explore({ setPage, page }) {
+function Explore() {
     const {pageCtx, authCtx} = useOutletContext()
     
     const [searchView, setSearchView] = useState()
@@ -22,6 +22,7 @@ function Explore({ setPage, page }) {
     }
     
     const bsks = require("../assets/media/pix/bsks.jpg");
+    const ringBanner = require("../assets/media/pix/ring_banner.png");
     
     useEffect(() => {
         // setPage('/explore')
@@ -30,67 +31,75 @@ function Explore({ setPage, page }) {
         <div className="explore">
             <StatusBar />
             <div className="expCover">
-                <div className="page-bar">
-                <h2>Explore</h2>
-                <div className="dummyBar" onClick={()=> toggleSearchView()}>
-                    <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
-                </div>
-                </div>
-                <div className="gigs-card">
-                    <div className="gigs-cover">
-                        <h3 className="gigs-header">Gigs and Offers</h3>
-                        <p className="gigs-txt">Do you have a job or task you want done</p>
-                        <Link to="/explore/gigs" className="gigs-btn">View</Link>
+                <div className="explore-bar">
+                    <h2>Explore</h2>
+                    <div className="dummyBar" onClick={()=> toggleSearchView()}>
+                        <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
                     </div>
                 </div>
-                <div className="gigs-card">
+                <Link to="/jobs" className="gigs-card">
+                    <div className="gigs-cover">
+                        <h3 className="gigs-header">Jobs and Offers</h3>
+                        <p className="gigs-txt">Do you have a job or task you want done</p>
+                        {/*<Link to="/explore/jobs" className="gigs-links">View</Link>*/}
+                    </div>
+                </Link>
+                <Link to="/institutions" className="gigs-card">
                     <div className="gigs-cover">
                         <h3 className="gigs-header">Academies and Institutions</h3>
                         <p className="gigs-txt">Explore schools and institutions across the country</p>
-                        <Link to="/explore/institutions" className="gigs-btn">View</Link>
+                        {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
                     </div>
-                </div>
+                </Link>
                 <div className="commDiv">
                     <h3 className="headTxt">Communities & Spaces</h3>
                     <div className="commGrp">
                         <div className="commItem">
                             <div className="commItemCover">
-                                <img src={bsks} alt="Cover Image" className="commItemImg" />
+                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
                             </div>
-                            <div className="commItemTxt">
-                                <h3>Web Developers</h3>
-                                <p>1.7k Members</p>
-                            </div>
-                        </div>
-                        <div className="commItem">
-                            <div className="commItemCover">
-                                <img src={bsks} alt="Cover Image" className="commItemImg" />
-                            </div>
-                            <div className="commItemTxt">
-                                <h3>Web Developers</h3>
-                                <p>1.7k Members</p>
+                            <div className="commItemContent">
+                                <div className="commItemTxt">
+                                    <h3>Web Developers</h3>
+                                    <p>1.7k Members</p>
+                                </div>
                             </div>
                         </div>
                         <div className="commItem">
                             <div className="commItemCover">
-                                <img src={bsks} alt="Cover Image" className="commItemImg" />
+                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
                             </div>
-                            <div className="commItemTxt">
-                                <h3>Web Developers</h3>
-                                <p>1.7k Members</p>
+                            <div className="commItemContent">
+                                <div className="commItemTxt">
+                                    <h3>Web Developers</h3>
+                                    <p>1.7k Members</p>
+                                </div>
                             </div>
                         </div>
                         <div className="commItem">
                             <div className="commItemCover">
-                                <img src={bsks} alt="Cover Image" className="commItemImg" />
+                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
                             </div>
-                            <div className="commItemTxt">
-                                <h3>Web Developers</h3>
-                                <p>1.7k Members</p>
+                            <div className="commItemContent">
+                                <div className="commItemTxt">
+                                    <h3>Web Developers</h3>
+                                    <p>1.7k Members</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="commItem">
+                            <div className="commItemCover">
+                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
+                            </div>
+                            <div className="commItemContent">
+                                <div className="commItemTxt">
+                                    <h3>Web Developers</h3>
+                                    <p>1.7k Members</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <Link to="/explore/communities" className="gigs-btn">View</Link>
+                    <Link to="/explore/communities" className="gigs-links">View more</Link>
                 </div>
                 { searchView ? <div className="searchPage">
                     <div className="searchBar">

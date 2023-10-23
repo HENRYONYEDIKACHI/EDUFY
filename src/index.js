@@ -13,6 +13,9 @@ import Settings from './pages/Settings';
 import Chats, { chatsLoader } from './pages/Chats';
 import Chat from './pages/Chat';
 import Post, { postLoader, postAction } from './pages/Post';
+import Gigs, { gigLoader } from './pages/Gigs';
+import JobPost, { jobPostLoader } from './pages/JobPost';
+import Institutions, { instituteLoader } from './pages/Institutions';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 // import CreatePost from './pages/CreatePost';
@@ -38,12 +41,27 @@ const router = createBrowserRouter([
                 shouldRevalidate (args){
                     console.log(args)
                     return false
-                },
+                }
             },
             {
                 path: "/explore",
                 element: <Explore />,
                 // loader: teamLoader,
+            },
+            {
+                path: "/jobs",
+                element: <Gigs />,
+                loader: gigLoader
+            },
+            {
+                path: "/jobs/post-job",
+                element: <JobPost />,
+                loader: jobPostLoader
+            },
+            {
+                path: "/institutions",
+                element: <Institutions />,
+                loader: instituteLoader,
             },
             {
                 path: "/notifications",
@@ -61,7 +79,7 @@ const router = createBrowserRouter([
                 loader: chatsLoader(queryClient),
             },
             {
-                path: "/user/:username/chat/:chatid/:chatname",
+                path: "/chat/:chatid",
                 element: <Chat />,
                 // loader: teamLoader,
             },

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="404.10172"
+   height="159.73343"
+   viewBox="0 0 106.91858 42.262803"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs2"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath970"><rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.0705297"
+         id="rect972"
+         width="106.91859"
+         height="42.262802"
+         x="-192.48051"
+         y="143.72878"
+         transform="rotate(-90)" /></clipPath></defs><g
+     id="layer1"
+     transform="translate(192.48052,-143.72877)"><image
+       width="63.657375"
+       height="112.24843"
+       preserveAspectRatio="none"
+       style="opacity:1;image-rendering:optimizeQuality"
+       xlink:href="../../../images/ring_banner.jpg"
+       id="image140"
+       x="133.03148"
+       y="82.897003"
+       transform="rotate(90)"
+       clip-path="url(#clipPath970)" /></g></svg>

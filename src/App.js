@@ -6,6 +6,7 @@ import { AuthContext } from './ctx/AuthContext'
 import { PageContext } from './ctx/PageContext'
 
 import './App.css'
+import './assets/css/common.css'
 import Cookies from 'universal-cookie'
 
 function App() {

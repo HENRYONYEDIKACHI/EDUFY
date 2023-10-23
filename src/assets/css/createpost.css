@@ -21,7 +21,7 @@
     background-color: rgba(0,0,0,.5);
     z-index: 1.5;
 }
-.page-hold {
+.create-page-hold {
     display: flex;
     flex-direction: column;
     width: 100%;
