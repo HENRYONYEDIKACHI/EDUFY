@@ -16,6 +16,7 @@ import Post, { postLoader, postAction } from './pages/Post';
 import Gigs, { gigLoader } from './pages/Gigs';
 import JobPost, { jobPostLoader } from './pages/JobPost';
 import Institutions, { instituteLoader } from './pages/Institutions';
+import Search, { searchLoader } from './pages/Search';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 // import CreatePost from './pages/CreatePost';
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
                 path: "/institutions",
                 element: <Institutions />,
                 loader: instituteLoader,
+            },
+            {
+                path: "/s",
+                element: <Search />,
+                loader: searchLoader,
             },
             {
                 path: "/notifications",

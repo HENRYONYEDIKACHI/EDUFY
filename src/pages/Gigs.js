@@ -1,4 +1,4 @@
-import {arrowBackOutline} from 'ionicons/icons'
+import { arrowBackOutline, searchOutline } from 'ionicons/icons'
 import { IonIcon } from '@ionic/react'
 import { useLoaderData, Link, Outlet } from 'react-router-dom'
 
@@ -46,9 +46,15 @@ export default function Gigs() {
     console.log(gigs)
     return (
         <div className="page-hold">
+            {/*<div className="comment">Some styling can be found at `assets/css/common.css`</div>*/}
             <div className="page-bar">
-                <IonIcon className="arrow-back" icon={arrowBackOutline} onClick={()=>window.history.back()}></IonIcon>
-                <h3 className="page-bar-txt">Jobs and Offers</h3>
+                <div className="page-bar-left">
+                    <IonIcon className="page-bar-icon" icon={arrowBackOutline} onClick={()=>window.history.back()}></IonIcon>
+                    <h3 className="page-bar-txt">Jobs</h3>
+                </div>
+                <div className="page-bar-right">
+                    <IonIcon className="page-bar-icon" icon={searchOutline} onClick={()=>{}}></IonIcon>
+                </div>
             </div>
             <div className="page-banner">
                 <div className="page-banner-headers-cover">
@@ -59,12 +65,12 @@ export default function Gigs() {
                     </div>
                 </div>
             </div>
-            <div className="jobs-more">
-                <div className="header-sort">
+            <div className="page-more">
+                <div className="page-more-header-sort">
                     <span>Jobs</span>
                     <span>Search</span>
                 </div>
-                <div className="jobs-view">
+                <div className="page-more-view">
                 {
                     gigs ? gigs.map((gigItem)=>
                     <div key={gigItem.id} className="gig-item">

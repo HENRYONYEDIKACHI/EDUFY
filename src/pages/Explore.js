@@ -5,21 +5,21 @@ import { search, searchOutline, optionsOutline, closeOutline, arrowBackOutline }
 
 import StatusBar from '../components/StatusBar'
 import BottomNav from '../components/BottomNav'
+// import Search from '../components/Search'
 
 import '../assets/css/explore.css'
 
 function Explore() {
     const {pageCtx, authCtx} = useOutletContext()
     
-    const [searchView, setSearchView] = useState()
-    
-    const toggleSearchView = () => {
-        if (searchView) {
-            setSearchView(false)
-        }else {
-            setSearchView(true)
-        }
-    }
+    // const [searchView, setSearchView] = useState(
+    // const toggleSearchView = () => {
+    //     if (searchView) {
+    //         setSearchView(false)
+    //     }else {
+    //         setSearchView(true)
+    //     }
+    // }
     
     const bsks = require("../assets/media/pix/bsks.jpg");
     const ringBanner = require("../assets/media/pix/ring_banner.png");
@@ -30,12 +30,12 @@ function Explore() {
     return (
         <div className="explore">
             <StatusBar />
-            <div className="expCover">
+            <div className="exp-cover">
                 <div className="explore-bar">
                     <h2>Explore</h2>
-                    <div className="dummyBar" onClick={()=> toggleSearchView()}>
+                    <Link to="/s" className="dummy-bar">
                         <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
-                    </div>
+                    </Link>
                 </div>
                 <Link to="/jobs" className="gigs-card">
                     <div className="gigs-cover">
@@ -51,48 +51,48 @@ function Explore() {
                         {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
                     </div>
                 </Link>
-                <div className="commDiv">
-                    <h3 className="headTxt">Communities & Spaces</h3>
-                    <div className="commGrp">
-                        <div className="commItem">
-                            <div className="commItemCover">
-                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
+                <div className="comm-div">
+                    <h3 className="head-txt">Communities & Spaces</h3>
+                    <div className="comm-grp">
+                        <div className="comm-item">
+                            <div className="comm-item-cover">
+                                <img src={ringBanner} alt="Cover Image" className="comm-item-img" />
                             </div>
-                            <div className="commItemContent">
-                                <div className="commItemTxt">
+                            <div className="comm-item-content">
+                                <div className="comm-item-txt">
                                     <h3>Web Developers</h3>
                                     <p>1.7k Members</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="commItem">
-                            <div className="commItemCover">
-                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
+                        <div className="comm-item">
+                            <div className="comm-item-cover">
+                                <img src={ringBanner} alt="Cover Image" className="comm-item-img" />
                             </div>
-                            <div className="commItemContent">
-                                <div className="commItemTxt">
+                            <div className="comm-item-content">
+                                <div className="comm-item-txt">
                                     <h3>Web Developers</h3>
                                     <p>1.7k Members</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="commItem">
-                            <div className="commItemCover">
-                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
+                        <div className="comm-item">
+                            <div className="comm-item-cover">
+                                <img src={ringBanner} alt="Cover Image" className="comm-item-img" />
                             </div>
-                            <div className="commItemContent">
-                                <div className="commItemTxt">
+                            <div className="comm-item-content">
+                                <div className="comm-item-txt">
                                     <h3>Web Developers</h3>
                                     <p>1.7k Members</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="commItem">
-                            <div className="commItemCover">
-                                <img src={ringBanner} alt="Cover Image" className="commItemImg" />
+                        <div className="comm-item">
+                            <div className="comm-item-cover">
+                                <img src={ringBanner} alt="Cover Image" className="comm-item-img" />
                             </div>
-                            <div className="commItemContent">
-                                <div className="commItemTxt">
+                            <div className="comm-item-content">
+                                <div className="comm-item-txt">
                                     <h3>Web Developers</h3>
                                     <p>1.7k Members</p>
                                 </div>
@@ -101,29 +101,7 @@ function Explore() {
                     </div>
                     <Link to="/explore/communities" className="gigs-links">View more</Link>
                 </div>
-                { searchView ? <div className="searchPage">
-                    <div className="searchBar">
-                        <div className="closeBar" onClick={()=> toggleSearchView()}>
-                            <IonIcon icon={arrowBackOutline} style={pageCtx.iconStyle}></IonIcon>
-                        </div>
-                        <div className="inputArea">
-                            <input placeholder="Search" name="searchBox" className="searchBox" type="search" />
-                            <div className="searchBtn">
-                                <IonIcon icon={search} style={pageCtx.iconStyle} />
-                            </div>
-                        </div>
-                    </div>
-                    <h3 className="headTxt">Quick Results</h3>
-                    <div className="quickResults">
-                        <div className="quickResultItems">Holla</div>
-                    </div>
-                    <h3 className="headTxt">Recent Searches</h3>
-                    <div className="searchHistory">
-                        <div className="historyItem">Hello world</div>
-                        <div className="historyItem">Ohayo</div>
-                        <div className="historyItem">Holla</div>
-                    </div>
-                </div> : '' }
+                {/* searchView ? <Search searchView={searchView} toggleSearchView={toggleSearchView} /> : '' */}
             </div>
             <BottomNav />
         </div>
