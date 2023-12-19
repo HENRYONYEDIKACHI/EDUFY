@@ -29,12 +29,11 @@ function StatusBar({ auths }) {
                     { authCtx.user.username === 'Guest' ? '' : <Link to={`/user/${authCtx.user.username}/chats`} className="topBarItem chatLink"  >
                         <IonIcon icon={chatbubbleOutline} style={pageCtx.iconStyle}></IonIcon>
                     </Link>}
-                    <div className="topBarItem menuLink" onClick={()=> pageCtx.toggleMenu()} >
-                        <IonIcon icon={pageCtx.menuView ? closeOutline : menuOutline} style={pageCtx.iconStyle}></IonIcon>
-                    </div>
+                    <Link to="/menu" className="topBarItem menuLink">
+                        <IonIcon icon={menuOutline} style={pageCtx.iconStyle}></IonIcon>
+                    </Link>
                 </div>
             </div>
-            { pageCtx.menuView ? <Menu /> : '' }
         </div>
     )
 }

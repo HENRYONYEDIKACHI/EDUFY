@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link, useOutletContext, Outlet } from 'react-router-dom'
 import { IonIcon } from '@ionic/react'
 import { search, searchOutline, optionsOutline, closeOutline, arrowBackOutline } from 'ionicons/icons'
 
@@ -33,25 +33,45 @@ function Explore() {
             <div className="exp-cover">
                 <div className="explore-bar">
                     <h2>Explore</h2>
-                    <Link to="/s" className="dummy-bar">
+                    <Link to="/explore/s" className="dummy-bar">
                         <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
                     </Link>
                 </div>
-                <Link to="/jobs" className="gigs-card">
-                    <div className="gigs-cover">
-                        <h3 className="gigs-header">Jobs and Offers</h3>
-                        <p className="gigs-txt">Do you have a job or task you want done</p>
-                        {/*<Link to="/explore/jobs" className="gigs-links">View</Link>*/}
-                    </div>
-                </Link>
-                <Link to="/institutions" className="gigs-card">
-                    <div className="gigs-cover">
-                        <h3 className="gigs-header">Academies and Institutions</h3>
-                        <p className="gigs-txt">Explore schools and institutions across the country</p>
-                        {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
-                    </div>
-                </Link>
-                <div className="comm-div">
+                <div className="gigs-box">
+                    <Link to="/explore/jobs" className="gigs-card">
+                        <img src={ringBanner} className="gigs-img" />
+                        <div className="gigs-cover">
+                            <h3 className="gigs-header">Jobs</h3>
+                            {/*<p className="gigs-txt">Do you have a job or task you want done</p>*/}
+                            {/*<Link to="/explore/jobs" className="gigs-links">View</Link>*/}
+                        </div>
+                    </Link>
+                    <Link to="/explore/institutions" className="gigs-card">
+                        <img src={ringBanner} className="gigs-img" />
+                        <div className="gigs-cover">
+                            <h3 className="gigs-header">Academics</h3>
+                            {/*<p className="gigs-txt">Explore schools and institutions across the country</p>*/}
+                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
+                        </div>
+                    </Link>
+                    <Link to="/explore/spaces" className="gigs-card">
+                        <img src={ringBanner} className="gigs-img" />
+                        <div className="gigs-cover">
+                            <h3 className="gigs-header">Spaces</h3>
+                            {/*<p className="gigs-txt">Create Spaces to share your content</p>*/}
+                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
+                        </div>
+                    </Link>
+                    <Link to="/explore/books" className="gigs-card">
+                        <img src={ringBanner} className="gigs-img" />
+                        <div className="gigs-cover">
+                            <h3 className="gigs-header">Books</h3>
+                            {/*<p className="gigs-txt">Create Spaces to share your content</p>*/}
+                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
+                        </div>
+                    </Link>
+                </div>
+                {/*<div className="comm-div">
                     <h3 className="head-txt">Communities & Spaces</h3>
                     <div className="comm-grp">
                         <div className="comm-item">
@@ -100,9 +120,10 @@ function Explore() {
                         </div>
                     </div>
                     <Link to="/explore/communities" className="gigs-links">View more</Link>
-                </div>
+                </div>*/}
                 {/* searchView ? <Search searchView={searchView} toggleSearchView={toggleSearchView} /> : '' */}
             </div>
+                <Outlet context={{pageCtx, authCtx}} />
             <BottomNav />
         </div>
     )

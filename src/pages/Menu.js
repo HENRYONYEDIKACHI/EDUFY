@@ -25,24 +25,23 @@ function Menu() {
     
     return (
         <div className="menu">
-            <div className="linkCover">
-                <div className="linkItem">
+            <StatusBar />
+            <div className="link-cover">
+                <div className="link-item">
                     <Link to="/account">Account</Link>
                 </div>
-                <div className="linkItem">
+                <div className="link-item">
                     <IonIcon icon={settingsOutline} style={pageCtx.iconStyle} ></IonIcon>
                     <Link to="/settings">Settings</Link>
                 </div>
+                {authCtx.user.loggedIn ? <Link className="auth-state-btn
+                logout-btn" onClick={()=> authCtx.onLogOut()} >Log out</Link> : <div className="auth-btn-cover">
+                    <Link to="/signin" className="auth-state-btn login-btn" >Log in</Link>
+                    <Link to="/signup" className="auth-state-btn signup-btn" >Sign up</Link>
+                </div>}
             </div>
-            <div className="authStateCover" >
-                {authCtx.user.loggedIn ? 
-                <div className="authStateBtn
-                logoutBtn" onClick={()=> authCtx.onLogOut()} >Log out</div> : 
-                <>
-                    <Link to="/signin" className="authStateBtn loginBtn" >Log in</Link>
-                    <Link to="/signup" className="authStateBtn signupBtn" >Sign up</Link>
-                </>}
-            </div>
+            {/*<div className="auth-state-cover" >*/}
+            {/*</div>*/}
         </div>
     )
 }

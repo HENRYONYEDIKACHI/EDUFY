@@ -212,14 +212,15 @@ function CreatePost({ toggleCreate }) {
                     </div> : ''}
                 </div>
             </div>
+            {/* Modal for changing view group */}
             <div style={pubOpt ? { display: 'flex'}: {display: 'none'}} className="view-change" onClick={()=> togglePubOpt() }>
                 <div className="view-select">
-                    <p>Select who can view your posts</p>
+                    {/*<p>Select who can view your posts</p>*/}
                     <div className="view-opt" onClick={()=> togglePub('public')}>
                         <div className="view-opt-left">
-                            <IonIcon className="lock-icon" icon={lockOpenOutline} style={pageCtx.iconStyle}></IonIcon>
+                            <IonIcon className="lock-icon" icon={peopleOutline} style={pageCtx.iconStyle}></IonIcon>
                             <div className="view-left-inn">
-                                <h4>Public</h4>
+                                <span className="inn-hd">Public</span>
                                 <p className="inn-txt">Anyone can see your posts</p>
                             </div>
                         </div>
@@ -227,9 +228,9 @@ function CreatePost({ toggleCreate }) {
                     </div>
                     <div className="view-opt" onClick={()=> togglePub('private')}>
                         <div className="view-opt-left">
-                            <IonIcon className="lock-icon" icon={lockClosedOutline} style={pageCtx.iconStyle}></IonIcon>
+                            <IonIcon className="lock-icon" icon={peopleCircleOutline} style={pageCtx.iconStyle}></IonIcon>
                             <div className="view-left-inn">
-                                <h4>Private</h4>
+                                <span className="inn-hd">Private</span>
                                 <p className="inn-txt">Only followers can view your posts</p>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 import '../assets/css/home.css'
 import { useState, useEffect, useContext, useRef, Suspense } from 'react'
-import { useLoaderData, useOutletContext, defer,Await } from 'react-router-dom'
+import { useLoaderData, useOutletContext, defer,Await, Outlet } from 'react-router-dom'
 
 import { IonIcon } from '@ionic/react';
 import { heart, heartOutline, repeat, repeatOutline, chatbox, chatboxOutline, ellipsisVertical, ellipsisVerticalOutline, pencilOutline, albumsOutline, createOutline } from 'ionicons/icons'
@@ -12,7 +12,10 @@ import Palette from '../components/Palette'
 import Poption from '../components/Poption'
 import FallBack from '../components/FallBack'
 import CreatePost from '../components/CreatePost'
+import GigItem from '../components/GigItem'
+import Faculties from '../components/Faculties'
 
+import AcadeRoll from '../components/AcadeRoll'
 import dummyposts from '../dummy/dummyposts'
 
 const grab_posts = async (pageParam) =>{
@@ -30,21 +33,64 @@ export const postsLoader = async () => {
 export default function Home({ viewOption, visibility, setVisibility, toggleOption }) {
     const {pageCtx, authCtx} = useOutletContext()
     const { posts } = useLoaderData()
+    const [showfaculties, setFaculties] = useState(false)
+    
+    const toggleFaculties = async () => {
+        {showfaculties? setFaculties(false) : setFaculties(true)}
+    }
+    
+    const ring = require('../assets/media/pix/ring_banner.png')
     return (
-        <div className="home">
+        <div className="base">
             <StatusBar />
-            <div className="homeCover">
-                { !posts ? <>
-                <FallBack />
-                <FallBack />
-                <FallBack />
-                <FallBack /></>
-                : posts.map((postitem)=><PostItem key={postitem.post_id} postitem={postitem} />) }
+            <div className="baseCover">
+                <div className="pop-serve">
+                    <div className="ft-div">
+                        <h2 className="ft-txt">Services</h2>
+                    </div>
+                    <div className="pop-cover">
+                        <div className="pop-item">
+                            <img className="pop-img" src={ring} />
+                            <div className="pop-txt">Typing</div>
+                        </div>
+                        <div className="pop-item">
+                            <img className="pop-img" src={ring} />
+                            <div className="pop-txt">Typing</div>
+                        </div>
+                        <div className="pop-item">
+                            <img className="pop-img" src={ring} />
+                            <div className="pop-txt">Typing</div>
+                        </div>
+                        <div className="pop-item">
+                            <img className="pop-img" src={ring} />
+                            <div className="pop-txt">Typing</div>
+                        </div>
+                    </div>
+                </div>
+                <div className=""></div>
+                <AcadeRoll showfaculties={showfaculties} toggleFaculties={toggleFaculties} />
+                <div className="gigs-cover">
+                    <div className="ft-div">
+                        <h2 className="ft-txt">Gigs</h2>
+                    </div>
+                    <div className="gigs-roll">
+                        <GigItem />
+                        <GigItem />
+                        <GigItem />
+                    </div>
+                </div>
+                <div className="events-cover">
+                    <div className="ft-div">
+                        <h2 className="ft-txt">Gigs</h2>
+                    </div>
+                    <div className="events-roll"></div>
+                </div>
             </div>
-            <Palette />
             {visibility ? <Poption viewOption={viewOption} setVisibility={setVisibility} /> : ''}
+            {showfaculties ? <Faculties toggleFaculties={toggleFaculties} /> : ''}
             <BottomNav />
-            {pageCtx.showCreate ? <CreatePost /> : ''}
+            {/*pageCtx.showCreate ? <CreatePost /> : ''*/}
+            <Outlet context={{pageCtx, authCtx}} />
         </div>
     )
 }

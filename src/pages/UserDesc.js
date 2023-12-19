@@ -1,9 +1,9 @@
 import { useState, useContext, useEffect } from 'react'
 
-function AboutUser() {
+import '../assets/css/user.css'
+
+export default function UserInfo() {
     return (
         <div>About user</div>
     )
 }
-
-export default AboutUser

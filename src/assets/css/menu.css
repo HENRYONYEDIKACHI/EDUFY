@@ -14,18 +14,20 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    /* height: 100%; */
+    height: 100%;
     width: 100%;
+    border: 1px solid black;
 }
-.linkCover {
+.link-cover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    margin-top: 3em;
     /* border: 1px solid black; */
 }
-.linkItem {
+.link-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -37,7 +39,7 @@
     font-weight: bold;
     border-top: 1px solid rgba(0, 0, 0, .05);
 }
-.authStateCover {
+.auth-state-cover {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,16 +47,17 @@
     /* padding: 2%; */
     /* border: 1px solid black; */
 }
-.authStateBtn {
+.auth-state-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 3em;
     width: 5em;
+    margin: .5% 0;
     font-weight: bold;
     color: white;
     background-color: rgba(0, 128, 128);
     border-radius: 2px;
     /* border: 1px solid black; */
 }
-.logoutBtn {}
+.logout-btn {}

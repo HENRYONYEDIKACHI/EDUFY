@@ -1,0 +1,114 @@
+.ac-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 96%;
+    height: 18em;
+    margin: 2% auto;
+    border-radius: 5px;
+    background-color: rgba(0,128,128,.5);
+    background-image: url('../media/pix/ring_banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.2);
+}
+.ac-banner-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    /* width: 80%; */
+    margin: .5em auto .5em .5em;
+    padding: 2% 1em;
+    border: 1px solid white;
+    /* color: white; */
+    background-color: rgba(255,255,255,1);
+}
+.ac-banner-head {
+    font-size: 1.2em;
+    margin: 1%;
+    /* text-shadow: 1px 1px rgba(140,217,140,.6); */
+}
+.ac-banner-cover>span {
+    margin: 1% auto;
+    /* font-size: 1.4em; */
+    font-weight: bold;
+}
+.ac-banner-option-cover {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 98%;
+    margin: 2% auto;
+}
+.ac-banner-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60%;
+    height: 2.5em;
+    padding: 0 1%;
+    font-weight: bold;
+    border-radius: 5px;
+    /* border: 1px solid rgba(0,128,128,.1); */
+    box-shadow: 0 0 1px .5px rgba(0,0,0,.1);
+}
+.page-btn-1 {
+    color: white;
+    background-color: rgba(140,217,140,.4);
+    border: 1px solid rgba(0,102,0,.5);
+}
+.page-btn-1:active {
+    background-color: rgba(140,217,140,.1);
+    /* background-color: rgba(0,128,128,1); */
+    webkit-tap-highlight-color: none;
+}
+.page-btn-2 {
+    background-color: white;
+    color: rgba(0,128,128,1);
+    /* border: 1px solid rgba(0,128,128,1); */
+}
+.ac-options {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* columns: 50% 50%; */
+    justify-content: flex-start;
+    align-items: center;
+    width: 98%;
+    margin: 1% auto;
+    overflow-x: scroll;
+    position: relative;
+    /* border: 1px solid rgba(0,0,0,1); */
+}
+.ac-options::-webkit-scrollbar {
+    display: none;
+}
+.ac-options-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 49%;
+    height: 8em;
+    margin: .5%;
+    padding: 1%;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.05);
+    /* font-weight: bold; */
+    background-color: rgba(255,255,255,.2);
+}
+.ac-options-btn:active {
+    color: teal;
+    background-color: rgba(0, 128, 128 .2);
+}
+.ac-options-txt {
+    /* color: teal; */
+    /* font-size: 12px; */
+    font-weight: bold;
+}

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
 }
-.gig-item {
+gig-item {
     display: flex;
     flex-direction: column;
     justify-content: center;

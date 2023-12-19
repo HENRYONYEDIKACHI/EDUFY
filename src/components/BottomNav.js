@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { useOutletContext, Link, NavLink } from 'react-router-dom'
 import { IonIcon } from '@ionic/react';
-import { home, homeOutline, notifications, notificationsOutline, search, searchOutline, person, personOutline, compass, compassOutline } from 'ionicons/icons'
+import { home, homeOutline, notifications, notificationsOutline, search, searchOutline, person, personOutline, compass, compassOutline, briefcaseOutline, briefcase } from 'ionicons/icons'
 
 import '../assets/css/bottomnav.css'
 
@@ -17,6 +17,12 @@ function BottomNav() {
             <NavLink to='/' className="tabLinks" >
                 {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} style={pageCtx.iconStyle}></IonIcon>)}
             </NavLink>
+            <NavLink to='/services' className="tabLinks" >
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? briefcase : briefcaseOutline} style={pageCtx.iconStyle}></IonIcon>)}
+            </NavLink>
+            {/*<NavLink to='/' className="tabLinks" >
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} style={pageCtx.iconStyle}></IonIcon>)}
+            </NavLink>
             <NavLink to='/explore' className="tabLinks" >
                 {({isActive, isPending})=> (<IonIcon icon={isActive ? compass : compassOutline} style={pageCtx.iconStyle}></IonIcon>)}
             </NavLink>
@@ -25,7 +31,7 @@ function BottomNav() {
             </NavLink>
             <NavLink to={`/user/${authCtx.user.username}`} className="tabLinks" >
                {({isActive, isPending})=> (<IonIcon icon={isActive ? person : personOutline} style={pageCtx.iconStyle}></IonIcon>)}
-            </NavLink>
+            </NavLink>*/}
         </div>
     )
 }

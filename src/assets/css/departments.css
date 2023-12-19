@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+}
+.fad-depts-hold {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: grey; */
+}
+.fad-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 96%;
+    /* height: 3em; */
+    margin: 1% auto;
+}
+.fad-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 1% auto;
+    font-size: 1.4em;
+    font-weight: bold;
+    /* border: 1px solid black; */
+}
+.fad-search {
+    height: 3em;
+    width: 98%;
+    padding: 0 2%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.05);
+}
+.fad-depts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
