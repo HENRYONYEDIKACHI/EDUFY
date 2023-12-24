@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    position: absolute;
+    height: 100%;
+    /* position: absolute; */
     z-index: 1;
     background-color: white;
 }
@@ -82,8 +83,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1% 2%;
-    margin: 4% 0 0 0;
+    padding: 0 2%;
+    margin: 6% 0 0 0;
     /* border: 1px solid black; */
 }
 .fac-name-cover {
@@ -128,9 +129,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* font-size: 12px; */
     overflow: hidden;
-    /* border: 1px solid black; */
 }
 .fac-collection {
     display: flex;
@@ -141,12 +140,8 @@
 }
 .fac-cards-actions {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    /* height: 3em; */
-    width: 100%;
-    margin: 0 auto;
-    /* overflow-x: scroll; */
     /* border: 1px solid black; */
 }
 .fac-cards-actions::-webkit-scrollbar {
@@ -158,9 +153,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 3.5em;
+    height: 3em;
     width: 8em;
-    /* margin: 1%; */
     font-weight: bold;
     color: teal;
     /* overflow: hidden; */

@@ -24,7 +24,7 @@ export default function Faculty({ faculty }) {
     return (
         <div className="fac-hold base">
             <StatusBar title="FEN" />
-            <div className="fac-cover base-cover">
+            <div className="base-cover">
                 <div className="fac-card" >
                     <div className="fac-card-details" >
                         {/*<div className="pro-cover" ></div>*/}
@@ -35,7 +35,7 @@ export default function Faculty({ faculty }) {
                             </div>
                         </div>
                     </div>
-                    &nbsp;
+                    {/* &nbsp; */}
                     <div className="fac-titles" >
                         <div className="fac-name-cover">
                             <h1 className="fac-name">Faculty of Engineering</h1>
@@ -51,6 +51,9 @@ export default function Faculty({ faculty }) {
                                 </Link>
                                 <Link to="info" className="fac-act-btn" onClick={(event)=> facTabs(event)}>
                                     Info
+                                </Link>
+                                <Link to="info" className="fac-act-btn" onClick={(event)=> facTabs(event)}>
+                                    Departments
                                 </Link>
                             </div>
                         </div>

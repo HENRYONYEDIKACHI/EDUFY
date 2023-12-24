@@ -71,10 +71,10 @@ export default function Academics() {
                         <span className="acd-link-txt">Sports Festivals, Workshops And Seminars</span>
                     </div>
                 </div>
+                <Outlet context={{ pageCtx, authCtx }} />
             </div>
             {pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''}
             <BottomNav />
-            <Outlet context={{ pageCtx, authCtx }} />
         </div>
     )
 }
