@@ -14,7 +14,7 @@ import Post from '../pages/Post';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 // import CreatePost from '../pages/CreatePost';
-import AboutUser from '../pages/UserDesc';
+import UserInfo from '../pages/UserInfo';
 import Reset from '../pages/Reset';
 
 import Req404 from './404.js';

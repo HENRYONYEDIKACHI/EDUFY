@@ -8,15 +8,10 @@
     position: fixed;
     bottom: 0;
     z-index: 5;
-    border: 1px solid blue;
-    /* background-color: rgba(0,0,0,.4); */
 }
-/* .dummy-fill {} */
 .fa-hold {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
     width: 100%;
     max-height: 80%;
     padding: .5em 0;
@@ -24,7 +19,6 @@
     background-color: white;
     border-radius: 10px 10px 0 0;
     position: absolute;
-    /* z-index: 5; */
 }
 .fa-head {
     display: flex;
@@ -34,7 +28,6 @@
     height: 2em;
     margin: 1% auto;
     font-size: 1.2em;
-    /* border: 1px solid black; */
 }
 .fa-bar {
     display: flex;
@@ -60,7 +53,6 @@
     align-items: center;
     width: 15%;
     height: 100%;
-    /* background-color: teal; */
     border: none;
 }
 .fa-list {

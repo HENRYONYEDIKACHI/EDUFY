@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { useOutletContext, Link, NavLink } from 'react-router-dom'
 import { IonIcon } from '@ionic/react';
-import { home, homeOutline, notifications, notificationsOutline, search, searchOutline, person, personOutline, compass, compassOutline, briefcaseOutline, briefcase } from 'ionicons/icons'
+import { home, homeOutline, notifications, notificationsOutline, search, searchOutline, person, personOutline, compass, compassOutline, briefcaseOutline, briefcase, school, schoolOutline, personCircle, personCircleOutline } from 'ionicons/icons'
 
 import '../assets/css/bottomnav.css'
 
@@ -13,25 +13,19 @@ function BottomNav() {
     }
     
     return (
-        <div className='bottomNav' >
+        <div className='bottomNav'>
             <NavLink to='/' className="tabLinks" >
                 {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} style={pageCtx.iconStyle}></IonIcon>)}
             </NavLink>
-            <NavLink to='/services' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? briefcase : briefcaseOutline} style={pageCtx.iconStyle}></IonIcon>)}
-            </NavLink>
-            {/*<NavLink to='/' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} style={pageCtx.iconStyle}></IonIcon>)}
+            <NavLink to='/academics' className="tabLinks" >
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? school : schoolOutline} style={pageCtx.iconStyle}></IonIcon>)}
             </NavLink>
             <NavLink to='/explore' className="tabLinks" >
                 {({isActive, isPending})=> (<IonIcon icon={isActive ? compass : compassOutline} style={pageCtx.iconStyle}></IonIcon>)}
             </NavLink>
-            <NavLink to='/notifications' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? notifications : notificationsOutline} style={pageCtx.iconStyle}></IonIcon>)}
-            </NavLink>
             <NavLink to={`/user/${authCtx.user.username}`} className="tabLinks" >
-               {({isActive, isPending})=> (<IonIcon icon={isActive ? person : personOutline} style={pageCtx.iconStyle}></IonIcon>)}
-            </NavLink>*/}
+               {({isActive, isPending})=> (<IonIcon icon={isActive ? personCircle : personCircleOutline} style={pageCtx.iconStyle}></IonIcon>)}
+            </NavLink>
         </div>
     )
 }

@@ -20,8 +20,8 @@ function App() {
     const [menuView, setMenuView] = useState(false)
     
     const iconStyle = {
-        fontSize: '25px',
-        color: 'rgb(0, 128, 128)'
+        fontSize: '1.6em',
+        color: 'rgb(0,128,128)'
     }
     const borderStyle = {
         borderBottom: '1px solid rgb(0,128,128)'
@@ -152,7 +152,12 @@ function App() {
         }
         setViewOption(option)
     }
-    const pageCtx = {page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption}//, postSocket, chatSocket, socketIsOpen}
+    
+    const [showfaculties, setFaculties] = useState(false)
+    const toggleFaculties = async () => {
+        {showfaculties? setFaculties(false) : setFaculties(true)}
+    }
+    const pageCtx = {page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties}//, postSocket, chatSocket, socketIsOpen}
     const authCtx = {user, onLogIn, onLogOut}
     useEffect(()=>{
         // navigateTo(page)

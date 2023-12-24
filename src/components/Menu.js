@@ -1,16 +1,17 @@
 import { useState, useEffect, useContext } from 'react'
 import { useOutletContext, Link } from 'react-router-dom'
 
-import User from './User'
-import Settings from './Settings'
-import StatusBar from '../components/StatusBar'
+import User from '../pages/User'
+import Settings from '../pages/Settings'
+
+import BackFill from './BackFill'
 
 import { IonIcon } from '@ionic/react'
-import { settingsOutline, logOutOutline, logInOutline } from 'ionicons/icons'
+import { settingsOutline, logOutOutline, logInOutline, closeOutline } from 'ionicons/icons'
 
 import '../assets/css/menu.css'
 
-function Menu() {
+export default function Menu({ toggleMenu }) {
     const {pageCtx, authCtx} = useOutletContext()
     const [view, setView] = useState(pageCtx.page)
     
@@ -25,8 +26,11 @@ function Menu() {
     
     return (
         <div className="menu">
-            <StatusBar />
+            <BackFill action={toggleMenu} />
             <div className="link-cover">
+                <div className="nav-tog" onClick={()=>toggleMenu()}>
+                    <IonIcon icon={closeOutline} size="large" />
+                </div>
                 <div className="link-item">
                     <Link to="/account">Account</Link>
                 </div>
@@ -45,5 +49,3 @@ function Menu() {
         </div>
     )
 }
-
-export default Menu

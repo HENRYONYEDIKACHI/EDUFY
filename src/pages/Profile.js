@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useMemo, useRef } from 'react'
-import { useOutletContext, Link, useParams, Outlet } from 'react-router-dom'
+import { useOutletContext, Link, useParams, Outlet, NavLink } from 'react-router-dom'
 
 import PostItem from '../components/PostItem'
 import Palette from '../components/Palette'
@@ -38,7 +38,7 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
     
     return (
         <div style={bottomStyle} className="profile">
-            <StatusBar />
+            <StatusBar title="Profile" />
             <div className="profile-cover">
                 <div className="info-card" >
                     <div className="card-details" >
@@ -89,14 +89,21 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                                 </div>
                              </> : ''}
                         </div>
-                        <div className="user-desc">
-                            <span className="user-bio">Cool and Calm fjdjsjdjfjfjdddjjdjdjdj</span>
-                        </div>
                     </div>
-                    {/*<div className="user-tabs-cover">
-                        <Link to={`/user/${userPath}/`} className="user-tabs user-dash" onClick={(event)=>userLink(event)}>Dashboard</Link>
-                        <Link to={`/user/${userPath}/info`} className="user-tabs user-info" onClick={(event)=>userLink(event)}>Info</Link>
-                    </div>*/}
+                    <div className="user-links">
+                        <NavLink to="about" className="u-link-cover">
+                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>About</div>)}
+                        </NavLink>
+                        <NavLink to="gigs" className="u-link-cover">
+                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Gigs</div>)}
+                        </NavLink>
+                        <NavLink to="channels" className="u-link-cover">
+                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Channels</div>)}
+                        </NavLink>
+                        <NavLink to="reviews" className="u-link-cover">
+                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Reviews</div>)}
+                        </NavLink>
+                    </div>
                 </div>
                 <Outlet context={{pageCtx, authCtx}} />
                 {/*<PostItem toggleOption={toggleOption} />*/}

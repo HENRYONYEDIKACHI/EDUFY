@@ -8,48 +8,48 @@ import BottomNav from '../components/BottomNav'
 
 import '../assets/css/services.css'
 
-export const jobLoader = async () => {
+export const serviceLoader = async () => {
     // Fetch gigs from api
-    const gigs = [
+    const services = [
         {
             'id': 1,
-            'title': 'Ecommerce Website',
-            'description': "I am looking for a web developer to create an ecommerce website. The design is to be responsive as well as intuitive and easy to use. Some contents are available but the developer will have to create some. I don't have a specific design in mind so the developer is free to come up with a design of his/her own.",
-            'skills': [
-                'HTML', 'CSS', 'JavaScript', 'Reactjs'
-            ],
-            'budget':  '$65',
-            'expiration': '5 days',
+            'title': 'Typing/Writing',
+            'desc': ''
         },
         {
             'id': 2,
-            'title': 'Logo Design',
-            'description': "I need logo designed for a transport/freight company. The design should be a simple one. The name of the company is LightPath Logistics. The colors to be used are grey and blue",
-            'skills': [
-                'PhotoShop', 'Graphic Design'
-            ],
-            'budget':  '$35',
-            'expiration': '3 days',
+            'title': 'Graphics & Design',
+            'description': '',
         },
         {
             'id': 3,
-            'title': 'Document Typing',
-            'description': "A fast typist and proofreader is needed to proofread, edit and type an eight pages ling document with an average of 120 words per page",
-            'skills': [
-                'MS Word', 'Typing', 'Editing',
-            ],
-            'budget':  '$40',
-            'expiration': '4 days'
+            'title': 'Sales And Marketing',
+            'desc': ''
+        },
+        {
+            'id': 4,
+            'title': 'Programming and Tech',
+            'desc': ''
+        },
+        {
+            'id': 5,
+            'title': '',
+            'desc': ''
+        },
+        {
+            'id': 6,
+            'title': 'Sales And Marketing',
+            'desc': ''
         },
     ]
-    return gigs
+    return services
 }
 
 export default function Services() {
-    const gigs = useLoaderData()
+    const {services } = useLoaderData()
     const { pageCtx, authCtx } = useOutletContext()
     const [newJobState, setNewJobState] = useState(false)
-    console.log(gigs)
+    console.log(services)
     
     const toggleJobPost = async () => {
         if (newJobState) {
@@ -60,18 +60,18 @@ export default function Services() {
     }
     return (
         <div className="base">
-            <StatusBar />
-            <div className="baseCover page-hold">
-                {/*<div className="comment">Some styling can be found at `assets/css/common.css`</div>*/}
+            <StatusBar title="Services" />
+            <div className="page-hold">
                 <div className="page-bar">
                     <div className="page-bar-left">
-                        {/*<IonIcon className="page-bar-icon" icon={arrowBackOutline} onClick={()=>window.history.back()}></IonIcon>*/}
-                        <h3 className="page-bar-txt">Jobs</h3>
+                        <IonIcon className="page-bar-icon" icon={arrowBackOutline} onClick={()=>window.history.back()}></IonIcon>
+                        <h3 className="page-bar-txt">Services</h3>
                     </div>
-                    <div className="page-bar-right">
+                    {/*<div className="page-bar-right">
                         <IonIcon className="page-bar-icon" icon={searchOutline} onClick={()=>{}}></IonIcon>
-                    </div>
+                    </div>*/}
                 </div>
+                <div className="comment">Some styling can be found at `assets/css/common.css`</div>
                 <div className="page-banner">
                     <div className="page-banner-headers-cover">
                         <h3>Welcome to the Jobs and Offers Page</h3>
@@ -81,26 +81,11 @@ export default function Services() {
                         </div>
                     </div>
                 </div>
-                <div className="page-more">
-                    {/*<div className="page-more-header-sort">
-                        <span>Jobs</span>
-                        <span>Search</span>
-                    </div>*/}
-                    <div className="page-more-view">
-                    {
-                        gigs ? gigs.map((gigItem)=>
-                        <div key={gigItem.id} className="gig-item">
-                            <h2 className="gig-item-header">{gigItem.title}</h2>
-                            <span className="gig-skills">Skills: {gigItem.skills.map((skl)=><span key={gigItem.skills.indexOf(skl)} className="skill-item">{skl}&nbsp;</span>)}</span>
-                            <p className="gig-budget">Budget: {gigItem.budget}</p>
-                            <Link to={`/job/${gigItem.id}`} className="gig-btn">View</Link>
-                        </div>) : <div className="no-gig">No gigs available</div>
-                    }</div>
-                </div>
+                
                 <div className="gig-filter-popup"></div>
                 {newJobState ? <JobPost newJobState={newJobState} toggleJobPost={toggleJobPost} /> : ''}
             </div>
-            <BottomNav />
+            {/*<BottomNav />*/}
         </div>
     )
 }

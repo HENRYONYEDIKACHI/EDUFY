@@ -5,7 +5,7 @@ import { arrowBackOutline, searchOutline, imagesOutline, readerOutline, albumsOu
 import Faculties from '../components/Faculties'
 import '../assets/css/acbanner.css'
 
-export default function Academics({ toggleFaculties }) {
+export default function Academics({ facData, toggleFaculties }) {
     const institutes = useLoaderData()
     const {pageCtx, authCtx} = useOutletContext()
     
@@ -16,16 +16,16 @@ export default function Academics({ toggleFaculties }) {
                 {/*<span>Explore the different academies and institutions of learning around the country</span>*/}
             </div>
             <div className="ac-options">
-                <div className="ac-options-btn" onClick={()=>toggleFaculties()}>
-                    <IonIcon icon={readerOutline} style={pageCtx.iconStyle}></IonIcon>
+                <div className="ac-options-btn" onClick={()=>pageCtx.toggleFaculties()}>
+                    {/*<IonIcon icon={readerOutline} style={pageCtx.iconStyle}></IonIcon>*/}
                     <p className="ac-options-txt">Faculties</p>
                 </div>
                 <div className="ac-options-btn" >
-                    <IonIcon icon={imagesOutline} style={pageCtx.iconStyle}></IonIcon>
+                    {/*<IonIcon icon={imagesOutline} style={pageCtx.iconStyle}></IonIcon>*/}
                     <p className="ac-options-txt">SUG</p>
                 </div>
                 <div className="ac-options-btn" >
-                    <IonIcon icon={imagesOutline} style={pageCtx.iconStyle}></IonIcon>
+                    {/*<IonIcon icon={imagesOutline} style={pageCtx.iconStyle}></IonIcon>*/}
                     <p className="ac-options-txt">SUG</p>
                 </div>
             </div>

@@ -28,49 +28,13 @@ function Explore() {
         // setPage('/explore')
     })
     return (
-        <div className="explore">
-            <StatusBar />
-            <div className="exp-cover">
+        <div className="base">
+            <StatusBar title="Explore" />
+            <div className="base-cover">
                 <div className="explore-bar">
-                    <h2>Explore</h2>
-                    <Link to="/explore/s" className="dummy-bar">
-                        <IonIcon icon={searchOutline} style={pageCtx.iconStyle}></IonIcon>
-                    </Link>
+                    <input type="search" name="explore-box" className="explore-box" placeholder="Search" />
                 </div>
-                <div className="gigs-box">
-                    <Link to="/explore/jobs" className="gigs-card">
-                        <img src={ringBanner} className="gigs-img" />
-                        <div className="gigs-cover">
-                            <h3 className="gigs-header">Jobs</h3>
-                            {/*<p className="gigs-txt">Do you have a job or task you want done</p>*/}
-                            {/*<Link to="/explore/jobs" className="gigs-links">View</Link>*/}
-                        </div>
-                    </Link>
-                    <Link to="/explore/institutions" className="gigs-card">
-                        <img src={ringBanner} className="gigs-img" />
-                        <div className="gigs-cover">
-                            <h3 className="gigs-header">Academics</h3>
-                            {/*<p className="gigs-txt">Explore schools and institutions across the country</p>*/}
-                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
-                        </div>
-                    </Link>
-                    <Link to="/explore/spaces" className="gigs-card">
-                        <img src={ringBanner} className="gigs-img" />
-                        <div className="gigs-cover">
-                            <h3 className="gigs-header">Spaces</h3>
-                            {/*<p className="gigs-txt">Create Spaces to share your content</p>*/}
-                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
-                        </div>
-                    </Link>
-                    <Link to="/explore/books" className="gigs-card">
-                        <img src={ringBanner} className="gigs-img" />
-                        <div className="gigs-cover">
-                            <h3 className="gigs-header">Books</h3>
-                            {/*<p className="gigs-txt">Create Spaces to share your content</p>*/}
-                            {/*<Link to="/explore/institutions" className="gigs-links">View</Link>*/}
-                        </div>
-                    </Link>
-                </div>
+                
                 {/*<div className="comm-div">
                     <h3 className="head-txt">Communities & Spaces</h3>
                     <div className="comm-grp">

@@ -1,3 +1,11 @@
+.fac-hold {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+}
 .fac-cover {
     display: flex;
     flex-direction: column;
@@ -5,10 +13,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top: 3em;
     /* padding: 1% 2%; */
     /* overflow-y: scroll; */
-    /* position: relative; */
 }
 .fac-card {
     display: flex;
@@ -20,6 +26,7 @@
     /* font-size: 15px; */
     background-color: white;
     /* border: 1px solid black; */
+    box-shadow: 0 0 .5px .5px rgba(0,0,0,.1);
 }
 .fac-card-details {
     display: flex;
@@ -74,9 +81,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 97%;
-    padding: 1% 1%;
-    margin: 4% 3%;
+    width: 100%;
+    padding: 1% 2%;
+    margin: 4% 0 0 0;
     /* border: 1px solid black; */
 }
 .fac-name-cover {
@@ -85,25 +92,44 @@
     /* flex-direction: column; */
     justify-content: flex-start;
     align-items: center;
-    min-height: 3.5em;
+    /* min-height: 3.5em; */
     width: 100%;
-    margin: 1% auto;
+    margin: 0 auto;
     font-weight: bold;
     position: relative;
+    /* border: 1px solid black; */
 }
 .fac-name {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    font-size: 1.4em;
+    font-size: 1.2em;
     /* margin: 1% 0; */
     /* border: 1px solid black; */
 }
 .fac-name-sub {
     width: 100%;
-    font-size: 1.1em;
+    font-size: .8em;
     color: rgb(0, 128, 128);
+    /* border: 1px solid black; */
+}
+.fac-desc {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 4em; */
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: 1% auto;
+}
+.fac-bio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* font-size: 12px; */
+    overflow: hidden;
     /* border: 1px solid black; */
 }
 .fac-collection {
@@ -115,12 +141,12 @@
 }
 .fac-cards-actions {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     /* height: 3em; */
     width: 100%;
-    margin: 1% auto;
-    overflow-x: scroll;
+    margin: 0 auto;
+    /* overflow-x: scroll; */
     /* border: 1px solid black; */
 }
 .fac-cards-actions::-webkit-scrollbar {
@@ -132,39 +158,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 3em;
-    min-width: 50%;
-    margin: 1%;
+    height: 3.5em;
+    width: 8em;
+    /* margin: 1%; */
     font-weight: bold;
     color: teal;
-    overflow: hidden;
-    border-radius: 5px;
-    /* border: 1px solid black; */
-    box-shadow: 0 0 1px 1px rgba(0,0,0,.04);
-}
-.fac-act-btn-icon {
-    /* height: 2.5em; */
-    /* width: 5em; */
-    /* border: 1px; */
-    /* color: white; */
+    /* overflow: hidden; */
     /* border: 1px solid black; */
 }
-.fac-desc {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: flex-start;
-    align-items: center;
-    /* height: 4em; */
-    width: 100%;
-    /* border: 1px solid black; */
-    margin: 2% auto;
-    padding: 0 1%;
-}
-.fac-bio {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    /* font-size: 12px; */
-    overflow: hidden;
-    /* border: 1px solid black; */
+.fac-act-btn:active {
+    background-color: rgba(0,128,128,.1);
 }

@@ -11,12 +11,13 @@ import Explore from './pages/Explore'
 import Notifications from './pages/Notifications'
 import Profile from './pages/Profile'
 import User from './pages/User'
-import UserInfo from './pages/UserDesc'
+import UserInfo from './pages/UserInfo'
 import Settings from './pages/Settings';
 import Chats, { chatsLoader } from './pages/Chats';
 import Chat from './pages/Chat';
 import Post, { postLoader, postAction } from './pages/Post';
-import Services, { jobLoader } from './pages/Services';
+import Channels, { channelLoader } from './pages/Channels';
+import Services, { serviceLoader } from './pages/Services';
 import Gig, { gigLoader } from './pages/Gig';
 import Faculties, { facLoader } from './components/Faculties';
 import Faculty, { facultyLoader } from './pages/Faculty';
@@ -28,9 +29,9 @@ import Search, { searchLoader } from './pages/Search';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import StatusPage from './pages/StatusPage';
-import Menu from './pages/Menu';
 import Reset from './pages/Reset';
 
+import Menu from './components/Menu';
 import Req404 from './components/404';
 import ErrorBoundary from './components/Error';
 
@@ -57,7 +58,13 @@ const router = createBrowserRouter([
             {
                 path: "services",
                 element: <Services />,
-                loader: jobLoader
+                loader: serviceLoader,
+                children: [
+                    {
+                        path: ':service',
+                        element: <>Holla</>
+                    },
+                ]
             },
             {
                 path: "academics",
@@ -65,12 +72,7 @@ const router = createBrowserRouter([
                 loader: acadLoader,
                 children: [
                     {
-                        path: "faculties",
-                        element: <Faculties />,
-                        loader: facLoader,
-                    },
-                    {
-                        path: "academics/faculty/:faculty",
+                        path: "faculty/:faculty",
                         element: <Faculty />,
                         loader: facultyLoader,
                         children: [
@@ -79,16 +81,24 @@ const router = createBrowserRouter([
                                 element: <FaHome />
                             },
                             {
+                                path: "info",
+                                element: <Departments />
+                            },
+                            {
                                 path: "dpts",
                                 element: <Departments />
                             },
+                            {
+                                path: "dpt/:dpt",
+                                element: <Department />
+                            }
                         ]
                     }
                 ]
             },
             {
-                path: "academics/faculty/:facultydpt/:dpt",
-                element: <Department />
+                path: 'channels',
+                element: <Channels />
             },
             {
                 path: "/explore",
@@ -120,11 +130,21 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
+                        path: "about",
+                        replace: true,
+                        element: <UserInfo />
+                    },
+                    {
+                        path: "gigs",
                         element: <User />
                     },
                     {
-                        path: "info",
-                        element: <UserInfo />
+                        path: "channels",
+                        element: <User />
+                    },
+                    {
+                        path: "reviews",
+                        element: <User />
                     }
                 ]
             },

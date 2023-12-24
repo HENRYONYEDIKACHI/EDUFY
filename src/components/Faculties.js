@@ -3,26 +3,11 @@ import { IonIcon } from '@ionic/react'
 import { arrowBackOutline, searchOutline } from 'ionicons/icons'
 import '../assets/css/faculties.css'
 
-export const facLoader = async () => {
-    const facData = [
-        {
-            faculty: 'Engineering',
-            code: 'fen'
-        },
-        {
-            faculty: 'Science',
-            code: 'fos'
-        },
-        {
-            faculty: 'Management Science',
-            code: 'fms'
-        },
-    ]
-    return facData
-}
-export default function Faculties({ newJobState, toggleFaculties }) {
-    const {pageCtx, authCtx} = useOutletContext()
-    const { facData } = useLoaderData()
+// export const facLoader = async () => {
+//     return facData
+// }
+export default function Faculties({ facData, toggleFaculties }) {
+    const { pageCtx, authCtx } = useOutletContext()
     console.log(facData)
     const ring = require('../assets/media/pix/ring_banner.png')
     return (
@@ -37,31 +22,12 @@ export default function Faculties({ newJobState, toggleFaculties }) {
                     </div>*/}
                 </div>
                 <div className="fa-list">
-                    {facData.map((fac)=><Link to="/academics/faculty/engineering" className="fa-item">
+                    {facData.map((fac)=><Link to="/academics/faculty/engineering" className="fa-item" onClick={()=>pageCtx.toggleFaculties()}>
                         <div className="fa-img-cover">
                             <img src={ring} className="fa-item-img" />
                         </div>
                         <h1 className="fa-item-txt">{fac.faculty}</h1>
                     </Link>)}
-                    
-                    <Link to="/academics/faculty/engineering" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Faculty of Engineering</h1>
-                    </Link>
-                    <Link to="/academics/faculty/engineering" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Faculty of Engineering</h1>
-                    </Link>
-                    <Link to="/academics/faculty/engineering" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Faculty of Engineering</h1>
-                    </Link>
                 </div>
                 <Outlet context={{pageCtx, authCtx}} />
             </div>

@@ -1,6 +1,6 @@
 import '../assets/css/home.css'
 import { useState, useEffect, useContext, useRef, Suspense } from 'react'
-import { useLoaderData, useOutletContext, defer,Await, Outlet } from 'react-router-dom'
+import { useLoaderData, useOutletContext, defer,Await, Outlet, Link } from 'react-router-dom'
 
 import { IonIcon } from '@ionic/react';
 import { heart, heartOutline, repeat, repeatOutline, chatbox, chatboxOutline, ellipsisVertical, ellipsisVerticalOutline, pencilOutline, albumsOutline, createOutline } from 'ionicons/icons'
@@ -23,7 +23,25 @@ const grab_posts = async (pageParam) =>{
     // const posts = await postsGrabber.json()
     // return posts
     const posts = dummyposts
-    return posts
+    const facData = [
+        {
+            id: 1,
+            faculty: 'Engineering',
+            code: 'fen'
+        },
+        {
+            id: 2,
+            faculty: 'Science',
+            code: 'fos'
+        },
+        {
+            id: 3,
+            faculty: 'Management Science',
+            code: 'fms'
+        },
+    ]
+    const data = {posts, facData}
+    return data
 }
 
 export const postsLoader = async () => {
@@ -32,46 +50,43 @@ export const postsLoader = async () => {
 
 export default function Home({ viewOption, visibility, setVisibility, toggleOption }) {
     const {pageCtx, authCtx} = useOutletContext()
-    const { posts } = useLoaderData()
-    const [showfaculties, setFaculties] = useState(false)
-    
-    const toggleFaculties = async () => {
-        {showfaculties? setFaculties(false) : setFaculties(true)}
-    }
+    const { posts, facData } = useLoaderData()
+    console.log(facData)
     
     const ring = require('../assets/media/pix/ring_banner.png')
     return (
         <div className="base">
-            <StatusBar />
-            <div className="baseCover">
+            <StatusBar title="Edufy" />
+            <div className="base-cover">
+                <AcadeRoll facData={facData} showfaculties={pageCtx.showfaculties} toggleFaculties={pageCtx.toggleFaculties} />
                 <div className="pop-serve">
                     <div className="ft-div">
                         <h2 className="ft-txt">Services</h2>
+                        <Link to="services" className="ft-more">See more</Link>
                     </div>
                     <div className="pop-cover">
-                        <div className="pop-item">
+                        <Link className="pop-item">
                             <img className="pop-img" src={ring} />
-                            <div className="pop-txt">Typing</div>
-                        </div>
-                        <div className="pop-item">
+                            <div className="pop-txt">Writing/Typing</div>
+                        </Link>
+                        <Link className="pop-item">
                             <img className="pop-img" src={ring} />
-                            <div className="pop-txt">Typing</div>
-                        </div>
-                        <div className="pop-item">
+                            <div className="pop-txt">Barbing</div>
+                        </Link>
+                        <Link className="pop-item">
                             <img className="pop-img" src={ring} />
-                            <div className="pop-txt">Typing</div>
-                        </div>
-                        <div className="pop-item">
+                            <div className="pop-txt">Fashion</div>
+                        </Link>
+                        <Link className="pop-item">
                             <img className="pop-img" src={ring} />
-                            <div className="pop-txt">Typing</div>
-                        </div>
+                            <div className="pop-txt">Graphics Design</div>
+                        </Link>
                     </div>
                 </div>
-                <div className=""></div>
-                <AcadeRoll showfaculties={showfaculties} toggleFaculties={toggleFaculties} />
                 <div className="gigs-cover">
                     <div className="ft-div">
                         <h2 className="ft-txt">Gigs</h2>
+                        <Link to="explore" className="ft-more">See more</Link>
                     </div>
                     <div className="gigs-roll">
                         <GigItem />
@@ -79,15 +94,20 @@ export default function Home({ viewOption, visibility, setVisibility, toggleOpti
                         <GigItem />
                     </div>
                 </div>
-                <div className="events-cover">
+                <div className="channels-cover">
                     <div className="ft-div">
-                        <h2 className="ft-txt">Gigs</h2>
+                        <h2 className="ft-txt">Channels</h2>
+                        <Link to="explore" className="ft-more">See more</Link>
                     </div>
-                    <div className="events-roll"></div>
+                    <div className="channel-roll">
+                        <GigItem />
+                        <GigItem />
+                        <GigItem />
+                    </div>
                 </div>
             </div>
             {visibility ? <Poption viewOption={viewOption} setVisibility={setVisibility} /> : ''}
-            {showfaculties ? <Faculties toggleFaculties={toggleFaculties} /> : ''}
+            {pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''}
             <BottomNav />
             {/*pageCtx.showCreate ? <CreatePost /> : ''*/}
             <Outlet context={{pageCtx, authCtx}} />

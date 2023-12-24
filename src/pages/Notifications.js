@@ -26,7 +26,7 @@ function Notifications() {
     
     return (
         <div className="notifs">
-            <StatusBar />
+            <StatusBar title="Notifications" />
             <div className="notifCover">
                 <div className="headArea">
                     <div className="sectionHead activitySectionHead" style={tabSection === 'activity' ? {borderBottom: pageCtx.borderStyle.borderBottom} : {borderBottom: 0}} onClick={()=> setTab('activity')}>

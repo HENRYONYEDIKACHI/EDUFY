@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext, useRef } from 'react'
 import { useOutletContext } from 'react-router-dom'
 
+import BackFill from './BackFill'
 import StatusBar from '../components/StatusBar'
-import Toast from '../components/Toast'
-import TextEditor from '../components/TextEditor'
-import FilePicker from '../components/FilePicker'
+import Toast from './Toast'
+import TextEditor from './TextEditor'
+import FilePicker from './FilePicker'
 import EmojiPicker from 'emoji-picker-react';
 
 import '../assets/css/createpost.css'
@@ -170,7 +171,7 @@ function CreatePost({ toggleCreate }) {
     }
     return (
         <div className="container">
-            <div className="back-fill" onClick={()=> closeCreate()}></div>
+            <BackFill action={closeCreate} />
             <div className="create-page-hold">
                 <div className="banner">
                     <div className="user-banner">
