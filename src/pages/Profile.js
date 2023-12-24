@@ -54,7 +54,7 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                     <div className="user-titles" >
                         {authCtx.user.username === userPath ? 
                         <div className="fullname-cover">
-                            <h1 className="fullname">{authCtx.user.firstname} {authCtx.user.lastname}</h1>
+                            <h1 className={pageCtx.theme=='light' ? "fullname u-link-cover-light" : "fullname u-link-cover-dark"}>{authCtx.user.firstname} {authCtx.user.lastname}</h1>
                             <h3 className="username">@{authCtx.user.username}</h3>
                         </div> : 
                         <div className="fullname-cover">
@@ -91,16 +91,16 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                         </div>
                     </div>
                     <div className="user-links">
-                        <NavLink to="about" className="u-link-cover">
+                        <NavLink to="about" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>About</div>)}
                         </NavLink>
-                        <NavLink to="gigs" className="u-link-cover">
+                        <NavLink to="gigs" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Gigs</div>)}
                         </NavLink>
-                        <NavLink to="channels" className="u-link-cover">
+                        <NavLink to="channels" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Channels</div>)}
                         </NavLink>
-                        <NavLink to="reviews" className="u-link-cover">
+                        <NavLink to="reviews" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Reviews</div>)}
                         </NavLink>
                     </div>

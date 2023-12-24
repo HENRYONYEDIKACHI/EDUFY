@@ -37,14 +37,14 @@ export default function Academics() {
     return (
         <div className="base">
             <StatusBar title="Academics" />
-            <div className="base-cover">
+            <div className={pageCtx.theme=='light' ? "base-cover base-cover-light" : "base-cover base-cover-dark"}>
                 <div className="acd-head">
                     <div className="acd-icon-cover">
-                        <IonIcon className="page-icon" icon={school} style={{'fontSize':'6em'}}></IonIcon>
+                        <IonIcon className={pageCtx.theme=='light' ? "page-icon page-icon-light" : "page-icon page-icon-dark"} icon={school}></IonIcon>
                     </div>
-                    <span className="acd-head-txt">Books. Past Questions. Institutions. Etc.</span>
+                    <span className={pageCtx.theme=='light' ? "acd-head-txt acd-head-txt-light" : "acd-head-txt acd-head-txt-dark"}>Books. Past Questions. Institutions. Etc.</span>
                 </div>
-                <div className="acd-links">
+                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
                         <img src={ring} className="acd-link-img" />
                     </div>
@@ -53,7 +53,7 @@ export default function Academics() {
                         <span className="acd-link-txt">Past Questions Textbooks, Research Papers, etc.</span>
                     </div>
                 </div>
-                <div className="acd-links" onClick={()=>pageCtx.toggleFaculties()}>
+                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"} onClick={()=>pageCtx.toggleFaculties()}>
                     <div className="acd-link-img-cover">
                         <img src={ring} className="acd-link-img" />
                     </div>
@@ -62,7 +62,7 @@ export default function Academics() {
                         <span className="acd-link-txt">Staff, Departments, Labs, etc</span>
                     </div>
                 </div>
-                <div className="acd-links">
+                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
                         <img src={ring} className="acd-link-img" />
                     </div>

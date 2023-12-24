@@ -16,8 +16,13 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(255,255,255,1);
     position: relative;
     text-decoration: none;
     /* webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+}
+.appBaseLight {
+    background-color: var(--bgLight);
+}
+.appBaseDark {
+    background-color: var(--bgDark);
 }

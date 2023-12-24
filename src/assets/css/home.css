@@ -49,6 +49,12 @@
     width: 50%;
     font-size: 1.2em;
 }
+.ft-txt-light {
+    color: var(--fontDark);
+}
+.ft-txt-dark {
+    color: var(--fontLight);
+}
 .ft-more {
     display: flex;
     justify-content: center;
@@ -62,6 +68,7 @@
     border: 1px solid rgba(0,128,128,.1);
     border-radius: 5px;
     box-shadow: 0 0 -2px .5px rgba(0,0,0,.1);
+    /* background-color: var(--bgLight); */
 }
 .ft-more:active {
     color: white;
@@ -91,7 +98,15 @@
     margin: 2% 1.5%;
     border-radius: 5px;
     overflow: hidden;
+}
+.pop-item-light {
+    color: var(--fontDark);
     box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
+}
+.pop-item-dark {
+    border: 1px solid white;
+    color: var(--fontLight);
+    background-color: var(--bgLight);
 }
 .pop-img {
     /* width: 100%; */

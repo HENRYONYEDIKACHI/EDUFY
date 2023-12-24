@@ -27,9 +27,9 @@ export default function Menu({ toggleMenu }) {
     return (
         <div className="menu">
             <BackFill action={toggleMenu} />
-            <div className="link-cover">
+            <div className={pageCtx.theme=='light' ? "link-cover link-cover-light" : "link-cover link-cover-dark"}>
                 <div className="nav-tog" onClick={()=>toggleMenu()}>
-                    <IonIcon icon={closeOutline} size="large" />
+                    <IonIcon icon={closeOutline} className={pageCtx.theme=='light' ? "close-icon close-icon-light" : "close-icon close-icon-dark"} />
                 </div>
                 <div className="link-item">
                     <Link to="/account">Account</Link>

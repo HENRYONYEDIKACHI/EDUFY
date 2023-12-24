@@ -1,6 +1,6 @@
 import '../assets/css/faculty.css'
 import { useState, useEffect, useContext, useMemo, useRef } from 'react'
-import { useOutletContext, Link, useParams, Outlet, useMatch, useLocation } from 'react-router-dom'
+import { useOutletContext, NavLink, Link, useParams, Outlet, useMatch, useLocation } from 'react-router-dom'
 
 import { IonIcon } from '@ionic/react'
 import { addOutline, addCircleOutline, shieldCheckmark, personAddOutline, person, logInOutline, personRemoveOutline, chatbubbleOutline, readerOutline, imagesOutline, albumsOutline, createOutline, informationCircleOutline, pencilOutline } from 'ionicons/icons'
@@ -17,25 +17,21 @@ export default function Faculty({ faculty }) {
     const {pageCtx, authCtx} = useOutletContext()
     const ring = require("../assets/media/pix/ring_banner.png")
     
-    const facTabs = async (event) => {
-        event.target.style.borderBottom = '2px solid rgba(0,128,128,1)'
-    }
-    const location = useLocation()
     return (
         <div className="fac-hold base">
             <StatusBar title="FEN" />
-            <div className="base-cover">
+            <div className={pageCtx.theme=='light' ? "base-cover base-cover-light" : "base-cover base-cover-dark"}>
                 <div className="fac-card" >
                     <div className="fac-card-details" >
                         {/*<div className="pro-cover" ></div>*/}
                         <div className="fac-cover-frame">
                             <img src={ring} className="fac-cover-img" />
-                            <div className="fac-avatar-cover" >
+                            <div className={pageCtx.theme=='light' ? "fac-avatar-cover fac-avatar-cover-light" : "fac-avatar-cover fac-avatar-cover-dark"} >
                                 <img src={ring} className="fac-avatar" alt="Avatar" />
                             </div>
                         </div>
                     </div>
-                    {/* &nbsp; */}
+                    &nbsp;
                     <div className="fac-titles" >
                         <div className="fac-name-cover">
                             <h1 className="fac-name">Faculty of Engineering</h1>
@@ -45,17 +41,12 @@ export default function Faculty({ faculty }) {
                             <span className="fac-bio">Faculty Motto</span>
                         </div>
                         <div className="fac-collection">
-                            <div className="fac-cards-actions" >
-                                <Link to="." className="fac-act-btn" onClick={(event)=> facTabs(event)}>
-                                    Activity
-                                </Link>
-                                <Link to="info" className="fac-act-btn" onClick={(event)=> facTabs(event)}>
-                                    Info
-                                </Link>
-                                <Link to="info" className="fac-act-btn" onClick={(event)=> facTabs(event)}>
-                                    Departments
-                                </Link>
-                            </div>
+                            <NavLink to="activity" className="fac-act-cover">
+                                {({isActive, isPending})=>(<div className={isActive ? "fac-btn fac-btn-active" : "fac-btn"}>Activity</div>)}
+                            </NavLink>
+                            <NavLink to="info" className="fac-act-cover" >
+                                {({isActive, isPending})=>(<div className={isActive ? "fac-btn fac-btn-active" : "fac-btn"}>Info</div>)}
+                            </NavLink>
                         </div>
                     </div>
                 </div>

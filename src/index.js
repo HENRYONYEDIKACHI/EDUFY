@@ -78,6 +78,7 @@ const router = createBrowserRouter([
                         children: [
                             {
                                 index: true,
+                                path: "activity",
                                 element: <FaHome />
                             },
                             {

@@ -1,6 +1,11 @@
 :root {
-    box-sizing: border-box;
-    margin: 0;
+    --fontLink: rgba(0,128,128,1);
+    --fontDark: rgba(0,0,0,1);
+    --fontLight: rgba(255,255,255,1);
+    --bgDark: rgba(0,25,48,1);
+    --bgLight: rgba(255,255,255,1);
+    --navBgDark: rgba(0,13,26,1);
+    --navBgLight: rgba(255,255,255,1);
 }
 .base {
     display: flex;
@@ -22,7 +27,14 @@
     top: 3em;
     bottom: 3em;
     overflow-y: scroll;
-    /* background-color: rgba(50, 50, 120, .6); */
+    
+}
+.base-cover-light {
+    background-color: var(--bgLight);
+}
+.base-cover-dark {
+    color: var(--fontLight);
+    background-color: var(--bgDark);
 }
 .base-cover::-webkit-scrollbar {
     display: none;

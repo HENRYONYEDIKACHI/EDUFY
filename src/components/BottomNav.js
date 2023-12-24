@@ -13,18 +13,18 @@ function BottomNav() {
     }
     
     return (
-        <div className='bottomNav'>
+        <div className={pageCtx.theme == 'light' ? 'bottomNav bottomNavLight' : 'bottomNav bottomNavDark'}>
             <NavLink to='/' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} style={pageCtx.iconStyle}></IonIcon>)}
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? home : homeOutline} className={pageCtx.theme == 'light' ? 'tabIcon tabIconLink' : 'tabIcon tabIconDark'}></IonIcon>)}
             </NavLink>
             <NavLink to='/academics' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? school : schoolOutline} style={pageCtx.iconStyle}></IonIcon>)}
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? school : schoolOutline} className={pageCtx.theme == 'light' ? 'tabIcon tabIconLink' : 'tabIcon tabIconDark'}></IonIcon>)}
             </NavLink>
             <NavLink to='/explore' className="tabLinks" >
-                {({isActive, isPending})=> (<IonIcon icon={isActive ? compass : compassOutline} style={pageCtx.iconStyle}></IonIcon>)}
+                {({isActive, isPending})=> (<IonIcon icon={isActive ? compass : compassOutline} className={pageCtx.theme == 'light' ? 'tabIcon tabIconLink' : 'tabIcon tabIconDark'}></IonIcon>)}
             </NavLink>
             <NavLink to={`/user/${authCtx.user.username}`} className="tabLinks" >
-               {({isActive, isPending})=> (<IonIcon icon={isActive ? personCircle : personCircleOutline} style={pageCtx.iconStyle}></IonIcon>)}
+               {({isActive, isPending})=> (<IonIcon icon={isActive ? personCircle : personCircleOutline} className={pageCtx.theme == 'light' ? "tabIcon tabIconLink" : "tabIcon tabIconDark"}></IonIcon>)}
             </NavLink>
         </div>
     )

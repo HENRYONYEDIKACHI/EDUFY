@@ -21,11 +21,32 @@ function App() {
     
     const iconStyle = {
         fontSize: '1.6em',
-        color: 'rgb(0,128,128)'
     }
     const borderStyle = {
         borderBottom: '1px solid rgb(0,128,128)'
     }
+    const root = document.querySelector(':root')
+    const rootVar = getComputedStyle(root)
+    
+    let edTheme = localStorage.getItem('edTheme')
+    if (!edTheme) {
+        localStorage.setItem('edTheme', 'light')
+    }
+    const [theme, setTheme] = useState(edTheme)
+    
+    const toggleTheme = async () => {
+        if (theme=='light') {
+            localStorage.setItem('edTheme', 'dark')
+            edTheme = localStorage.getItem('edTheme')
+            setTheme(edTheme)
+        }
+        else if (theme=='dark') {
+            localStorage.setItem('edTheme', 'light')
+            edTheme = localStorage.getItem('edTheme')
+            setTheme(edTheme)
+        }
+    }
+    
     const [userURL, setUserURL] = useState('')
     const [allChats, setAllChats] = useState('')
     const [chatURL, setChatURL] = useState('')
@@ -157,7 +178,7 @@ function App() {
     const toggleFaculties = async () => {
         {showfaculties? setFaculties(false) : setFaculties(true)}
     }
-    const pageCtx = {page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties}//, postSocket, chatSocket, socketIsOpen}
+    const pageCtx = {page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties, rootVar, theme, toggleTheme}//, postSocket, chatSocket, socketIsOpen}
     const authCtx = {user, onLogIn, onLogOut}
     useEffect(()=>{
         // navigateTo(page)
@@ -166,7 +187,7 @@ function App() {
     return (
         /*<PageContext.Provider value={{ page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, postSocket, chatSocket, socketIsOpen }}>
             <AuthContext.Provider value={{ user, onLogIn, onLogOut}} >*/
-                <div className="appBase">
+                <div className={theme=='light' ? "appBase appBaseLight" : "appBase appBaseDark"}>
                     <Outlet context={{pageCtx, authCtx}} />
                 </div>
             /*</AuthContext.Provider>

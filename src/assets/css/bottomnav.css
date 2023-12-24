@@ -11,8 +11,13 @@
     position: fixed;
     bottom: 0;
     /* z-index: 1; */
-    /* background-color: white; */
+}
+.bottomNavLight {
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+    background-color: var(--navBgLight);
+}
+.bottomNavDark {
+    background-color: var(--navBgDark);
 }
 .tabLinks {
     display: flex;
@@ -26,4 +31,14 @@
 }
 .tabLinks:active {
     background-color: rgba(0, 128, 128, .2);
+}
+.tabIcon {
+    font-size: 25px;
+    color: var(--fontLight);
+}
+.tabIconLink {
+    color: var(--fontLink);
+}
+.tabIconDark {
+    color: var(--fontLight);
 }

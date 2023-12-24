@@ -61,23 +61,23 @@ export default function Home({ viewOption, visibility, setVisibility, toggleOpti
                 <AcadeRoll facData={facData} showfaculties={pageCtx.showfaculties} toggleFaculties={pageCtx.toggleFaculties} />
                 <div className="pop-serve">
                     <div className="ft-div">
-                        <h2 className="ft-txt">Services</h2>
+                        <h2 className={pageCtx.theme=='light' ? "ft-txt ft-txt-light" : "ft-txt ft-txt-dark"}>Services</h2>
                         <Link to="services" className="ft-more">See more</Link>
                     </div>
                     <div className="pop-cover">
-                        <Link className="pop-item">
+                        <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <img className="pop-img" src={ring} />
                             <div className="pop-txt">Writing/Typing</div>
                         </Link>
-                        <Link className="pop-item">
+                        <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <img className="pop-img" src={ring} />
                             <div className="pop-txt">Barbing</div>
                         </Link>
-                        <Link className="pop-item">
+                        <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <img className="pop-img" src={ring} />
                             <div className="pop-txt">Fashion</div>
                         </Link>
-                        <Link className="pop-item">
+                        <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <img className="pop-img" src={ring} />
                             <div className="pop-txt">Graphics Design</div>
                         </Link>
@@ -85,7 +85,7 @@ export default function Home({ viewOption, visibility, setVisibility, toggleOpti
                 </div>
                 <div className="gigs-cover">
                     <div className="ft-div">
-                        <h2 className="ft-txt">Gigs</h2>
+                        <h2 className={pageCtx.theme=='light' ? "ft-txt ft-txt-light" : "ft-txt ft-txt-dark"}>Gigs</h2>
                         <Link to="explore" className="ft-more">See more</Link>
                     </div>
                     <div className="gigs-roll">
@@ -96,7 +96,7 @@ export default function Home({ viewOption, visibility, setVisibility, toggleOpti
                 </div>
                 <div className="channels-cover">
                     <div className="ft-div">
-                        <h2 className="ft-txt">Channels</h2>
+                        <h2 className={pageCtx.theme=='light' ? "ft-txt ft-txt-light" : "ft-txt ft-txt-dark"}>Channels</h2>
                         <Link to="explore" className="ft-more">See more</Link>
                     </div>
                     <div className="channel-roll">
