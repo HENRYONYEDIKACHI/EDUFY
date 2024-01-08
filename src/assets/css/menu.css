@@ -1,11 +1,12 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    text-decoration: none;
-    webkit-tap-highlight-color: rgba(0, 0, 0, .1);
-}
 *:visited {
     color: inherit;
+}
+@keyframes menu-slide {
+    0% {
+        width: 0;
+    } 100% {
+        width:70%;
+    }
 }
 .menu {
     display: flex;
@@ -27,11 +28,12 @@
     align-items: center;
     width: 70%;
     height: 100%;
-    /* margin-top: 3em; */
-    background-color: white;
     position: fixed;
     z-index: 2;
     right: 0;
+    animation-name: menu-slide;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
     /* border: 1px solid black; */
 }
 .link-cover-light {
@@ -66,7 +68,6 @@
     width: 70%;
     padding: 0 3%;
     /* color: teal; */
-    background-color: white;
     font-weight: bold;
     border-top: 1px solid rgba(0, 0, 0, .05);
 }

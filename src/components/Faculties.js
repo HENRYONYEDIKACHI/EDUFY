@@ -13,8 +13,8 @@ export default function Faculties({ facData, toggleFaculties }) {
     return (
         <div className="faculties">
             <div className="back-fill" onClick={()=>toggleFaculties()}></div>
-            <div className="fa-hold">
-                <h1 className="fa-head">Faculties</h1>
+            <div className={pageCtx.theme=='light' ? "fa-hold fa-hold-light" : "fa-hold fa-hold-dark"}>
+                <h3 className="fa-head">Faculties</h3>
                 <div className="fa-bar">
                     <input type="search" name="fa-search" className="fa-search" placeholder="Search faculty" />
                     {/*<div className="fa-btn">
@@ -22,11 +22,11 @@ export default function Faculties({ facData, toggleFaculties }) {
                     </div>*/}
                 </div>
                 <div className="fa-list">
-                    {facData.map((fac)=><Link to="/academics/faculty/engineering" className="fa-item" onClick={()=>pageCtx.toggleFaculties()}>
+                    {facData.map((fac)=><Link key={fac.id} to={`/academics/faculty/${fac.faculty}`} className={pageCtx.theme=='light' ? "fa-item fa-item-light" : "fa-item fa-item-dark"} onClick={()=>pageCtx.toggleFaculties()}>
                         <div className="fa-img-cover">
                             <img src={ring} className="fa-item-img" />
                         </div>
-                        <h1 className="fa-item-txt">{fac.faculty}</h1>
+                        <h4 className="fa-item-txt">{fac.faculty}</h4>
                     </Link>)}
                 </div>
                 <Outlet context={{pageCtx, authCtx}} />

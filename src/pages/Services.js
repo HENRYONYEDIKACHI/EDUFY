@@ -1,11 +1,12 @@
 import { arrowBackOutline, searchOutline } from 'ionicons/icons'
 import { IonIcon } from '@ionic/react'
 import { useState, useEffect, useContext } from 'react'
-import { useLoaderData, Link, Outlet, useOutletContext } from 'react-router-dom'
+import { useLoaderData, Link, NavLink, Outlet, useOutletContext } from 'react-router-dom'
 import JobPost from '../components/JobPost';
 import StatusBar from '../components/StatusBar'
 import BottomNav from '../components/BottomNav'
 
+import '../assets/css/common.css'
 import '../assets/css/services.css'
 
 export const serviceLoader = async () => {
@@ -61,31 +62,66 @@ export default function Services() {
     return (
         <div className="base">
             <StatusBar title="Services" />
-            <div className="page-hold">
-                <div className="page-bar">
-                    <div className="page-bar-left">
-                        <IonIcon className="page-bar-icon" icon={arrowBackOutline} onClick={()=>window.history.back()}></IonIcon>
-                        <h3 className="page-bar-txt">Services</h3>
-                    </div>
-                    {/*<div className="page-bar-right">
-                        <IonIcon className="page-bar-icon" icon={searchOutline} onClick={()=>{}}></IonIcon>
-                    </div>*/}
+            <div className={pageCtx.theme=='light' ? "base-cover base-cover-light" : "base-cover base-cover-dark"}>
+                <div className="servi-cat">
+                    <NavLink to="all" className={pageCtx.theme=='light' ? "cat-link-cover cat-link-cover-light" : "cat-link-cover cat-link-cover-dark"}>
+                        {({isActive, isPending})=>(<span className={isActive ? "cat-links cat-links-active" : "cat-links cat-links-dark"}>All</span>)}
+                    </NavLink>
+                    <NavLink to="graphics" className={pageCtx.theme=='light' ? "cat-link-cover cat-link-cover-light" : "cat-link-cover cat-link-cover-dark"}>
+                        {({isActive, isPending})=>(<span className={isActive ? "cat-links cat-links-active" : "cat-links cat-links-dark"}>Graphics</span>)}
+                    </NavLink>
+                    <NavLink to="tech" className={pageCtx.theme=='light' ? "cat-link-cover cat-link-cover-light" : "cat-link-cover cat-link-cover-dark"}>
+                        {({isActive, isPending})=>(<span className={isActive ? "cat-links cat-links-active" : "cat-links cat-links-dark"}>Tech</span>)}
+                    </NavLink>
+                    <NavLink to="writing" className={pageCtx.theme=='light' ? "cat-link-cover cat-link-cover-light" : "cat-link-cover cat-link-cover-dark"}>
+                        {({isActive, isPending})=>(<span className={isActive ? "cat-links cat-links-active" : "cat-links cat-links-dark"}>Writing</span>)}
+                    </NavLink>
+                    <NavLink to="fashion" className={pageCtx.theme=='light' ? "cat-link-cover cat-link-cover-light" : "cat-link-cover cat-link-cover-dark"}>
+                        {({isActive, isPending})=>(<span className={isActive ? "cat-links cat-links-active" : "cat-links cat-links-dark"}>Fashion</span>)}
+                    </NavLink>
                 </div>
-                <div className="comment">Some styling can be found at `assets/css/common.css`</div>
-                <div className="page-banner">
-                    <div className="page-banner-headers-cover">
-                        <h3>Welcome to the Jobs and Offers Page</h3>
-                        <span>Post jobs. Find skilled persons to carry out tasks</span>
-                        <div className="page-banner-option-cover">
-                            <div onClick={()=> toggleJobPost()} className="page-banner-btn page-btn-1">Post Gig</div>
-                        </div>
+                <Link to="graphics" className={pageCtx.theme=='light' ? "servi-links servi-links-light" : "servi-links servi-links-dark"}>
+                    <div className="servi-link-img-cover">
+                        <IonIcon icon={searchOutline} size="large" className="servi-link-img"></IonIcon>
                     </div>
-                </div>
-                
-                <div className="gig-filter-popup"></div>
-                {newJobState ? <JobPost newJobState={newJobState} toggleJobPost={toggleJobPost} /> : ''}
+                    <div className="servi-link-txt-cover">
+                        <span className="servi-link-txt-hd">Graphics and Design</span>
+                    </div>
+                </Link>
+                <Link to="tech" className={pageCtx.theme=='light' ? "servi-links servi-links-light" : "servi-links servi-links-dark"}>
+                    <div className="servi-link-img-cover">
+                        <IonIcon icon={searchOutline} size="large" className="servi-link-img"></IonIcon>
+                    </div>
+                    <div className="servi-link-txt-cover">
+                        <span className="servi-link-txt-hd">Programming and Tech</span>
+                    </div>
+                </Link>
+                <Link to="tutorials" className={pageCtx.theme=='light' ? "servi-links servi-links-light" : "servi-links servi-links-dark"}>
+                    <div className="servi-link-img-cover">
+                        <IonIcon icon={searchOutline} size="large" className="servi-link-img"></IonIcon>
+                    </div>
+                    <div className="servi-link-txt-cover">
+                        <span className="servi-link-txt-hd">Tutorials</span>
+                    </div>
+                </Link>
+                <Link to="electricals" className={pageCtx.theme=='light' ? "servi-links servi-links-light" : "servi-links servi-links-dark"}>
+                    <div className="servi-link-img-cover">
+                        <IonIcon icon={searchOutline} size="large" className="servi-link-img"></IonIcon>
+                    </div>
+                    <div className="servi-link-txt-cover">
+                        <span className="servi-link-txt-hd">Electrical and Electronics</span>
+                    </div>
+                </Link>
+                <Link to="fashion" className={pageCtx.theme=='light' ? "servi-links servi-links-light" : "servi-links servi-links-dark"}>
+                    <div className="servi-link-img-cover">
+                        <IonIcon icon={searchOutline} size="large" className="servi-link-img"></IonIcon>
+                    </div>
+                    <div className="servi-link-txt-cover">
+                        <span className="servi-link-txt-hd">Fashion and Lifestyle</span>
+                    </div>
+                </Link>
             </div>
-            {/*<BottomNav />*/}
+            <BottomNav />
         </div>
     )
 }

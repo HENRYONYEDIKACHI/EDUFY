@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useMemo, useRef } from 'react'
-import { useOutletContext, Link, useParams, Outlet, NavLink } from 'react-router-dom'
+import { useOutletContext, Link, useParams, Outlet, NavLink, useLocation } from 'react-router-dom'
 
 import PostItem from '../components/PostItem'
 import Palette from '../components/Palette'
@@ -20,7 +20,6 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
         bottom: '3em'
     }
     
-    const pathArray = pageCtx.page.split('/')
     const params = useParams()
     const userPath = params.username
     console.log(userPath)
@@ -36,11 +35,12 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
     const bsks = require("../assets/media/pix/bsks.jpg")
     const ring = require("../assets/media/pix/ring_banner.png")
     
+    const location = useLocation()
     return (
-        <div style={bottomStyle} className="profile">
+        <div style={bottomStyle} className="base">
             <StatusBar title="Profile" />
-            <div className="profile-cover">
-                <div className="info-card" >
+            <div className="base-cover">
+                <div className={pageCtx.theme=='light' ? "info-card info-card-light" : "info-card info-card-dark"}>
                     <div className="card-details" >
                         {/*<div className="pro-cover" ></div>*/}
                         <div className="cover-frame">
@@ -94,9 +94,9 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                         <NavLink to="about" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>About</div>)}
                         </NavLink>
-                        <NavLink to="gigs" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
+                        {/*<NavLink to="gigs" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Gigs</div>)}
-                        </NavLink>
+                        </NavLink>*/}
                         <NavLink to="channels" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Channels</div>)}
                         </NavLink>
@@ -108,7 +108,7 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                 <Outlet context={{pageCtx, authCtx}} />
                 {/*<PostItem toggleOption={toggleOption} />*/}
             </div>
-                <Palette />
+                {/*<Palette />*/}
                 {visibility ? <Poption viewOption={viewOption} setVisibility={setVisibility} /> : ''}
                 {pageCtx.showCreate ? <CreatePost /> : ''}
             { authCtx.user.username === userPath ? <BottomNav /> : '' }

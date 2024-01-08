@@ -1,53 +1,74 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: Courier New;
-}
-.user-over {
+.us-hold {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* border: 1px solid black; */
-    /* background-color: white; */
-}
-.options {
-    display: flex;
-    /* flex-wrap: wrap; */
-    /* columns: 50% 50%; */
     justify-content: flex-start;
     align-items: center;
-    width: 98%;
-    margin: 1% auto;
-    overflow-x: scroll;
-    position: relative;
-    /* border: 1px solid rgba(0,0,0,1); */
+    width: 100%;
+    /* height: 100%; */
+    padding: 4% 0;
+    /* border: 1px solid white; */
 }
-.options::-webkit-scrollbar {
-    display: none;
-}
-.options-btn {
+.us-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0 0 auto;
-    width: 49%;
-    height: 8em;
-    margin: .5%;
-    padding: 1%;
-    border-radius: 2px;
-    box-shadow: 0 0 1px 1px rgba(0,0,0,.05);
-    /* font-weight: bold; */
-    background-color: rgba(255,255,255,.2);
+    width: 96%;
+    /* height: 3em; */
+    margin: 3% auto;
+    border-radius: 5px;
+    position: relative;
 }
-.options-btn:active {
-    color: teal;
-    background-color: rgba(0, 128, 128 .2);
+.us-card-light {
+    border: 1px solid rgba(0,0,0,.2);
+    background-color: var(--navBgLight);
 }
-.options-btn-txt {
-    /* color: teal; */
-    /* font-size: 12px; */
+.us-card-dark {
+    border: 1px solid rgba(255,255,255,.2);
+    background-color: var(--navBgDark);
+}
+.us-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: ; */
+    /* height: 1.2em; */
+    padding: 1% 2%;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top: -16%;
+    left: 2%;
+}
+.us-tag-light {
+    border: 1px solid rgba(0,0,0,.2);
+    background-color: var(--bgLight);
+}
+.us-tag-dark {
+    border: 1px solid rgba(255,255,255,.2);
+    background-color: var(--navBgDark);
+}
+.us-basic {}
+.us-ed {}
+.us-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    margin: 3% auto;
+    gap: 1%;
+}
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 2em;
+    padding: 0 2%;
+}
+.col {}
+.col-1 {
     font-weight: bold;
 }

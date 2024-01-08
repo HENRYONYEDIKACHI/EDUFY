@@ -1,3 +1,10 @@
+@keyframes s-anime {
+    0% {
+        height: 0;
+    }100% {
+        height: 100%;
+    }
+}
 .faculties {
     display: flex;
     flex-direction: column;
@@ -16,9 +23,20 @@
     max-height: 80%;
     padding: .5em 0;
     overflow: hidden;
-    background-color: white;
     border-radius: 10px 10px 0 0;
     position: absolute;
+    animation-name: s-anime;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.fa-hold-light {
+    color: var(--fontDark);
+    background-color: var(--bgLight);
+}
+.fa-hold-dark {
+    color: var(--fontLight);
+    background-color: var(--bgDark);
 }
 .fa-head {
     display: flex;
@@ -27,7 +45,7 @@
     width: 96%;
     height: 2em;
     margin: 1% auto;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
 }
 .fa-bar {
     display: flex;
@@ -60,9 +78,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 98%;
+    width: 100%;
     margin: 1% auto;
-    /* border: 1px solid black; */
+    /* border: 1px solid white; */
 }
 .fa-item {
     display: flex;
@@ -72,7 +90,14 @@
     height: 4em;
     margin: 0 auto;
     /* border: 1px solid black; */
+}
+.fa-item-light {
+    color: var(--fontDark);
     box-shadow: 0 0 .5px .5px rgba(0,0,0,.1);
+}
+.fa-item-dark {
+    color: var(--fontLight);
+    box-shadow: 0 0 .5px .5px rgba(255,255,255,.1);
 }
 .fa-img-cover {
     display: flex;

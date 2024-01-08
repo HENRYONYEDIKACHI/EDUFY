@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
 .chatCover {
     display: flex;
     flex-direction: column;

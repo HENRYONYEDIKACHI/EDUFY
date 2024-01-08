@@ -1,44 +1,51 @@
-import { Link, useOutletContext, Outlet } from 'react-router-dom'
+import { Link, useOutletContext, Outlet, useLoaderData } from 'react-router-dom'
 import { IonIcon } from '@ionic/react'
 import { arrowBackOutline, searchOutline } from 'ionicons/icons'
 
 import '../assets/css/departments.css'
 
+export const dptsLoader = async ({params}) => {
+    const dpts = [
+        {
+            id: 1,
+            dpt: 'Mechanical',
+            code: 'MEE'
+        },{
+            id: 2,
+            dpt: 'Mechatronics',
+            code: 'MCE'
+        },{
+            id: 3,
+            dpt: 'Electrical and Elctronics',
+            code: 'EEE'
+        },{
+            id: 4,
+            dpt: 'Civil',
+            code: 'CVE'
+        }
+    ]
+    return {dpts}
+}
+
 export default function Departments() {
     const {pageCtx, authCtx} = useOutletContext()
     const ring = require('../assets/media/pix/ring_banner.png')
+    
+    const { dpts } = useLoaderData()
     return (
         <div className="fad-depts-hold">
             <div className="fad-head">
-                <h3 className="fad-header">Departments</h3>
+                {/*<h3 className="fad-header">Departments</h3>*/}
                 <input type="search" name="fad-src" placeholder="Find a department" className="fad-search" />
             </div>
             <div className="fad-depts">
                 <div className="fa-list">
-                    <Link to="/academics/faculty/engineering/dpt/chm" className="fa-item">
+                    {dpts.map((dpt)=><Link key={dpt.id} to={`/academics/faculty/engineering/dpt/${dpt.code.toLowerCase()}`} className="fa-item">
                         <div className="fa-img-cover">
                             <img src={ring} className="fa-item-img" />
                         </div>
-                        <h1 className="fa-item-txt">Chemical Engineering</h1>
-                    </Link>
-                    <Link to="/academics/faculty/engineering/dpt/eee" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Electrical and Electronics</h1>
-                    </Link>
-                    <Link to="/academics/faculty/engineering/dpt/mce" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Mechatronics Engineering</h1>
-                    </Link>
-                    <Link to="/academics/faculty/engineering/dpt/mee" className="fa-item">
-                        <div className="fa-img-cover">
-                            <img src={ring} className="fa-item-img" />
-                        </div>
-                        <h1 className="fa-item-txt">Mechanical Engineering</h1>
-                    </Link>
+                        <h1 className="fa-item-txt">{dpt.dpt}</h1>
+                    </Link>)}
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { useLoaderData, Link, useOutletContext, Outlet } from 'react-router-dom'
 import { IonIcon } from '@ionic/react'
-import { school } from 'ionicons/icons'
+import { school, schoolOutline, book,  bookOutline, megaphone, easel, easelOutline, globle, globeOutline, calendar, calendarOutline } from 'ionicons/icons'
 
 import StatusBar from '../components/StatusBar'
 import BottomNav from '../components/BottomNav'
@@ -38,15 +38,15 @@ export default function Academics() {
         <div className="base">
             <StatusBar title="Academics" />
             <div className={pageCtx.theme=='light' ? "base-cover base-cover-light" : "base-cover base-cover-dark"}>
-                <div className="acd-head">
+                <div className={pageCtx.theme=='light' ? "acd-head acd-head-light" : "acd-head acd-head-dark"}>
                     <div className="acd-icon-cover">
                         <IonIcon className={pageCtx.theme=='light' ? "page-icon page-icon-light" : "page-icon page-icon-dark"} icon={school}></IonIcon>
                     </div>
-                    <span className={pageCtx.theme=='light' ? "acd-head-txt acd-head-txt-light" : "acd-head-txt acd-head-txt-dark"}>Books. Past Questions. Institutions. Etc.</span>
+                    <span className={pageCtx.theme=='light' ? "acd-head-txt acd-head-txt-light" : "acd-head-txt acd-head-txt-dark"}>Books. Past Questions. Tutorials. Etc.</span>
                 </div>
                 <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
-                        <img src={ring} className="acd-link-img" />
+                        <IonIcon icon={bookOutline} size="large" className="acd-link-img"></IonIcon>
                     </div>
                     <div className="acd-link-txt-cover">
                         <span className="acd-link-txt-hd">Books</span>
@@ -55,7 +55,7 @@ export default function Academics() {
                 </div>
                 <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"} onClick={()=>pageCtx.toggleFaculties()}>
                     <div className="acd-link-img-cover">
-                        <img src={ring} className="acd-link-img" />
+                        <IonIcon icon={schoolOutline} size="large" className="acd-link-img"></IonIcon>
                     </div>
                     <div className="acd-link-txt-cover">
                         <span className="acd-link-txt-hd">Faculties</span>
@@ -64,17 +64,35 @@ export default function Academics() {
                 </div>
                 <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
-                        <img src={ring} className="acd-link-img" />
+                        <IonIcon icon={calendarOutline} size="large" className="acd-link-img"></IonIcon>
                     </div>
                     <div className="acd-link-txt-cover">
                         <span className="acd-link-txt-hd">Events</span>
                         <span className="acd-link-txt">Sports Festivals, Workshops And Seminars</span>
                     </div>
                 </div>
-                <Outlet context={{ pageCtx, authCtx }} />
+                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                    <div className="acd-link-img-cover">
+                        <IonIcon icon={globeOutline} size="large" className="acd-link-img"></IonIcon>
+                    </div>
+                    <div className="acd-link-txt-cover">
+                        <span className="acd-link-txt-hd">SUG</span>
+                        <span className="acd-link-txt">Offices, Elections</span>
+                    </div>
+                </div>
+                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                    <div className="acd-link-img-cover">
+                        <IonIcon icon={easelOutline} size="large" className="acd-link-img"></IonIcon>
+                    </div>
+                    <div className="acd-link-txt-cover">
+                        <span className="acd-link-txt-hd">Tutorials</span>
+                        <span className="acd-link-txt">Training Centers,  Videos, Channels</span>
+                    </div>
+                </div>
             </div>
             {pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''}
             <BottomNav />
+            <Outlet context={{ pageCtx, authCtx }} />
         </div>
     )
 }

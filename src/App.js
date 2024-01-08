@@ -1,22 +1,23 @@
 import { useState, useEffect, useContext, useMemo, useRef } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
-import Manager from './components/Manager'
-import { AuthContext } from './ctx/AuthContext'
-import { PageContext } from './ctx/PageContext'
+// import { AuthContext } from './ctx/AuthContext'
+// import { PageContext } from './ctx/PageContext'
 
-import './App.css'
+import Signin from './pages/Signin'
+
 import './assets/css/common.css'
+import './App.css'
 import Cookies from 'universal-cookie'
 
 function App() {
+    const font = require('./assets/fonts/Fredoka-Regular.ttf')
     const cookies = new Cookies()
     const anime = require("animejs")
     const navigate = useNavigate()
     
     const apiRoute = '127.0.0.1:8080'
     let user = {}
-    const [page, setPage] = useState(window.location.pathname)
     const [menuView, setMenuView] = useState(false)
     
     const iconStyle = {
@@ -73,7 +74,14 @@ function App() {
             setMenuView(true)
         }
     }
-    
+    const [showLogin, setLogin] = useState(false)
+    const toggleLogin = async () => {
+        if(showLogin) {
+            setLogin(false)
+        }else {
+            setLogin(true)
+        }
+    }
     // const localData = JSON.stringify(cookies.get('chappUser'))
     const localData = localStorage.getItem('chappUser')
     if (localData) {
@@ -108,7 +116,7 @@ function App() {
     const onLogIn = (xData) => {
         localStorage.setItem("chappUser", JSON.stringify({username: xData.user.username, email: xData.user.email, user_id: xData.user.user_id, firstname: xData.user.firstname, lastname: xData.user.lastname, access_token: xData.access_token, loggedIn: true }))
         const userData=JSON.parse(localStorage.getItem('chappUser'))
-        user= {
+        user={
             username: userData.username,
             email: userData.email,
             user_id: userData.user_id,
@@ -118,8 +126,6 @@ function App() {
             loggedIn: userData.loggedIn
         }
         console.log(user)
-        navigate('/')
-        // navigateTo('/')
     }
     const onLogOut = async () =>{
         const logoutReq =  await fetch(`http://${apiRoute}/signout`, {
@@ -135,7 +141,7 @@ function App() {
         console.log(data)
         if (data.res === 'OK') {
             localStorage.removeItem('chappUser')
-            user = {
+            user={
                 username: 'Guest',
                 email: null,
                 user_id: null,
@@ -144,9 +150,7 @@ function App() {
                 acctoken: null,
                 loggedIn: false
             }
-            // navigateTo('/')
             toggleMenu()
-            navigate('/')
         } else if (data.res == 'Error') {
             alert(data.message)
         }
@@ -178,20 +182,22 @@ function App() {
     const toggleFaculties = async () => {
         {showfaculties? setFaculties(false) : setFaculties(true)}
     }
-    const pageCtx = {page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties, rootVar, theme, toggleTheme}//, postSocket, chatSocket, socketIsOpen}
-    const authCtx = {user, onLogIn, onLogOut}
-    useEffect(()=>{
-        // navigateTo(page)
-    }, [user])
+    const [search, setSearch] = useState(false)
+    const toggleSearch = async () => {
+        if (search) {
+            setSearch(false)
+        } else {
+            setSearch(true)
+        }
+    }
+    const pageCtx = {menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties, rootVar, theme, toggleTheme, search, toggleSearch}//, postSocket, chatSocket, socketIsOpen}
+    const authCtx = {user, onLogIn, onLogOut, showLogin, toggleLogin}
     
     return (
-        /*<PageContext.Provider value={{ page, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, postSocket, chatSocket, socketIsOpen }}>
-            <AuthContext.Provider value={{ user, onLogIn, onLogOut}} >*/
-                <div className={theme=='light' ? "appBase appBaseLight" : "appBase appBaseDark"}>
-                    <Outlet context={{pageCtx, authCtx}} />
-                </div>
-            /*</AuthContext.Provider>
-        </PageContext.Provider>*/
+        <div style={{fontFamily: font}} className={theme=='light' ? "appBase appBaseLight" : "appBase appBaseDark"}>
+            {showLogin ? <Signin pageCtx={pageCtx} authCtx={authCtx} /> : ""}
+            <Outlet context={{pageCtx, authCtx}} />
+        </div>
     );
 }
 

@@ -1,8 +1,11 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+@keyframes s-anime {
+    0% {
+        height: 0;
+    }100% {
+        height: 100%;
+    }
 }
-.search-page {
+.s-page {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -10,94 +13,116 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: white;
-    z-index: 4;
+    bottom: 0;
+    z-index: 6;
+    animation-name: s-anime;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
-.search-bar {
+.s-page-light {
+    color: var(--fontDark);
+    background-color: var(--bgLight);
+}
+.s-page-dark {
+    color: var(--fontLight);
+    background-color: var(--bgDark);
+}
+.s-bar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 3em;
     width: 100%;
-    padding: 1%;
-    background-color: white;
-    border-bottom: 1px solid rgba(0,0,0,.05);
+    height: 4em;
 }
-.close-bar {
+.s-bar-light {
+    box-shadow: 0 0 .5px .5px rgba(0,0,0,.1);
+}
+.s-bar-dark {
+    background-color: var(--navBgDark);
+}
+.s-close-bar {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 3em;
-    height: 100%;
-    /* border: 1px solid black; */
+    height: 3em;
 }
-.input-area {
+.s-close-icon {
+    /* width: 2em; */
+    /* height: 2em; */
+    /* border: 1px solid white; */
+}
+.s-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     height: 100%;
-    /* border: 1px solid black; */
 }
-.search-box {
+.s-input {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
     height: 100%;
-    width: 80%;
-    padding: 4%;
-    outline: none;
+    padding: 0 2%;
     border: none;
-    font-size: 15px;
-    /* border-radius: 20px 0px 0px 20px; */
-    background-color: rgba(0, 0, 0, .05);
+    outline: none;
+    color: none;
+    background-color: rgba(0,0,0,0);
 }
-.search-btn {
+.s-input-light:focus {
+    color: var(--fontDark);
+    /* border-bottom: 1px solid var(--fontDark); */
+}
+.s-input-dark:focus {
+    color: var(--fontLight);
+    /* border-bottom: 1px solid var(--fontLink); */
+}
+.quick-bar {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 3em;
+    /* border: 1px solid white; */
+}
+.quick-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     height: 100%;
-    width: 4em;
-    /* border-radius: 0 20px 20px 0; */
-    background-color: rgba(0, 0, 0, .05);
+    /* border: 1px solid white; */
 }
-.quick-results {
+.quick-link-item {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* border: 1px solid black; */
+    height: 100%;
+    /* font-size: 1.2em; */
+    font-weight: bold;
+    /* border: 1px solid white; */
 }
-.quick-results > h3, .search-history > h3 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    /* border: 1px solid black; */
+.quick-link-active {
+    color: var(--fontLink);
+    border-bottom: 2px solid var(--fontLink);
 }
-.quick-result-items {
+.quick-link-cover {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 3em;
-    /* border: 1px solid black; */
-}
-.search-history {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-.history-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 3em;
+    height: 100%;
+    margin: 0 auto;
+    /* padding: 0 1%; */
     /* border: 1px solid black; */
+}
+.quick-link-cover-light {
+    /* color: var(--fontDark); */
+}
+.quick-link-cover-dark {
+    /* color: var(--fontLight); */
 }

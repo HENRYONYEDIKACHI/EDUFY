@@ -1,7 +1,13 @@
+@font-face {
+    font-family: fredoka;
+    src: url(../fonts/Fredoka-Regular.ttf);
+}
 :root {
+    --fontFam: fredoka;
     --fontLink: rgba(0,128,128,1);
     --fontDark: rgba(0,0,0,1);
     --fontLight: rgba(255,255,255,1);
+    --iconDark: grey;
     --bgDark: rgba(0,25,48,1);
     --bgLight: rgba(255,255,255,1);
     --navBgDark: rgba(0,13,26,1);
@@ -13,7 +19,7 @@
     justify-content: center;
     align-items: center;
     /* background-color: grey; */
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
 }
@@ -27,7 +33,7 @@
     top: 3em;
     bottom: 3em;
     overflow-y: scroll;
-    
+    scroll-behavior: smooth;
 }
 .base-cover-light {
     background-color: var(--bgLight);
@@ -161,4 +167,13 @@
     width: 100%;
     padding: 1%;
     /* background-color: rgba(0,0,0,.2); */
+}
+.page-icon {
+    font-size: 8em;
+}
+.page-icon-light {
+    color: var(--fontDark);
+}
+.page-icon-dark {
+    color: var(--fontLight);
 }

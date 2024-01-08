@@ -1,7 +1,10 @@
 import { useState, useEffect, useContext } from 'react'
-import { useOutletContext } from 'react-router-dom'
+import { useOutletContext, NavLink, Outlet } from 'react-router-dom'
 import StatusBar from '../components/StatusBar'
 import BottomNav from '../components/BottomNav'
+
+import Notivity from './Notivity'
+import Bookmarks from './Bookmarks'
 
 import '../assets/css/notif.css'
 
@@ -25,37 +28,18 @@ function Notifications() {
     })
     
     return (
-        <div className="notifs">
+        <div className="base">
             <StatusBar title="Notifications" />
-            <div className="notifCover">
-                <div className="headArea">
-                    <div className="sectionHead activitySectionHead" style={tabSection === 'activity' ? {borderBottom: pageCtx.borderStyle.borderBottom} : {borderBottom: 0}} onClick={()=> setTab('activity')}>
-                        <h3>Activity</h3>
-                    </div>
-                    <div style={tabSection === 'bookmark' ? {borderBottom: pageCtx.borderStyle.borderBottom} : {borderBottom: 0}} className="sectionHead bookmarkSectionHead" onClick={()=> setTab('bookmark')}>
-                        <h3>Bookmarks</h3>
-                    </div>
+            <div className="base-cover">
+                <div className={pageCtx.theme=='light' ? "head-area head-area-light": "head-area head-area-dark"}>
+                    <NavLink to="activity" className="sectionHead">
+                        {({isActive,isPending})=>(<h3 className={isActive ? "tab-txt tab-txt-active" : "tab-txt"}>Activity</h3>)}
+                    </NavLink>
+                    <NavLink to="bookmarks" className="sectionHead">
+                        {({isActive,isPending})=>(<h3 className={isActive ? "tab-txt tab-txt-active" : "tab-txt"}>Bookmark</h3>)}
+                    </NavLink>
                 </div>
-                {tabSection === 'activity' ? 
-                <div className="sections activitySection">
-                    <div className="notifItem notifOptBar">
-                        <div className="read">
-                            <h5>All</h5>
-                            &nbsp;
-                            <h5>Unread</h5>
-                        </div>
-                        <div className="markread">
-                            <h5>Mark as read</h5>
-                            &nbsp;
-                            <IonIcon icon={checkmarkDoneOutline} style={pageCtx.iconStyle}></IonIcon>
-                        </div>
-                    </div>
-                    <div className="notifItem">Hello, how are you today?. Just checking on you.</div>
-                    <div className="notifItem">Hey! today's the the 'day' today</div>
-                    <div className="notifItem">Heya! this is just another notification.</div>
-                    <div className="notifItem">Well, well, well, look who we have here. It's is I your notification item.</div>
-                </div>
-                : <div className="sections bookmarkSection"></div>}
+                <Outlet context={{pageCtx, authCtx}} />
             </div>
             <BottomNav />
         </div>

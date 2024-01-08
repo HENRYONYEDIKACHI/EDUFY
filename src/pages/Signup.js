@@ -130,7 +130,7 @@ function Signup() {
                 <button className="signup-btn" type="submit" onClick={signupAction} >Signup</button>
                 <div className="others">
                     <Link to="/reset" className="otherOpts" >Reset Password</Link>
-                    <Link to="/signin" className="otherOpts" >Sign in</Link>
+                    {/*<Link to="/signin" className="otherOpts" >Sign in</Link>*/}
                 </div>
             </div>
         </div>

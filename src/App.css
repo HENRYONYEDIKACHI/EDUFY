@@ -1,13 +1,13 @@
 @font-face {
-    font-family: FredokaReg;
-    src: url('assets/fonts/Fredoka-Regular.ttf');
+    font-family: fredoka;
+    src: url('./assets/fonts/Fredoka-Regular.ttf');
 }
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: FredokaReg; /* Roboto 'Times New Roman';*/
+    font-family: var(--fontFam);
     text-decoration: none;
-    /* webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+    webkit-tap-highlight-color: inherit;
 }
 .appBase {
     display: flex;
@@ -18,11 +18,12 @@
     width: 100vw;
     position: relative;
     text-decoration: none;
-    /* webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
 }
 .appBaseLight {
+    color: var(--fontDark);
     background-color: var(--bgLight);
 }
 .appBaseDark {
+    color: var(--fontLight);
     background-color: var(--bgDark);
 }

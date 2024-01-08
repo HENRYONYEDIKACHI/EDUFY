@@ -40,7 +40,7 @@ export default function Menu({ toggleMenu }) {
                 </div>
                 {authCtx.user.loggedIn ? <Link className="auth-state-btn
                 logout-btn" onClick={()=> authCtx.onLogOut()} >Log out</Link> : <div className="auth-btn-cover">
-                    <Link to="/signin" className="auth-state-btn login-btn" >Log in</Link>
+                    <div onClick={()=>authCtx.toggleLogin()} className="auth-state-btn login-btn" >Log in</div>
                     <Link to="/signup" className="auth-state-btn signup-btn" >Sign up</Link>
                 </div>}
             </div>

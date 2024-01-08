@@ -3,12 +3,13 @@ import { useOutletContext, Link } from 'react-router-dom'
 
 import { useIonToast } from '@ionic/react'
 import StatusBar from '../components/StatusBar'
+import BackFill from '../components/BackFill'
 // import LoadingState from '../components/LoadingState'
 
 import '../assets/css/Signin.css'
 
-export default function Signin() {
-    const {pageCtx, authCtx} = useOutletContext()
+export default function Signin({pageCtx,authCtx}) {
+    // const {pageCtx, authCtx} = useOutletContext()
     
     const [email, setEmail] = useState('')
     const [password, setPass] = useState('')
@@ -70,19 +71,20 @@ export default function Signin() {
     // authCtx.onLogOut()
     return (
         <div className="container">
-            <StatusBar />
+            {/*<StatusBar title="Sign in" />*/}
+            <BackFill action={authCtx.toggleLogin} />
             <div className="signin-cover" >
                 <span className="logintxt" >Sign in</span>
                 <div className="signin-form" >
                     <input name="email" onChange={handleMail} type="email" placeholder="Email" className="signin-fields" />
                     <input name="password" onChange={handlePass} type="password" placeholder="Password" className="signin-fields" />
                 </div>
-            </div>
-            <div className="signin-actions" >
-                <button className="signin-btn" type="submit" onClick={()=>{loginAction(); presentToast('bottom')}} >Login</button>
-                <div className="others">
-                    <Link to="/reset" className="otherOpts" >Reset Password</Link>
-                    <Link to="/signup" className="otherOpts" >Sign up</Link>
+                <div className="signin-actions" >
+                    <button className="signin-btn" type="submit" onClick={()=>{loginAction(); presentToast('bottom')}} >Login</button>
+                    <div className="others">
+                        <Link to="/reset" className="otherOpts" >Reset Password</Link>
+                        <Link to="/signup" className="otherOpts" >Sign up</Link>
+                    </div>
                 </div>
             </div>
             {/*{loading ? <LoadingState /> : ''}*/}

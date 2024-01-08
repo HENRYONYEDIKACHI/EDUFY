@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import App from './App';
@@ -9,6 +9,8 @@ import App from './App';
 import Home, { postsLoader, postsAction } from './pages/Home'
 import Explore from './pages/Explore'
 import Notifications from './pages/Notifications'
+import Notivity from './pages/Notivity'
+import Bookmarks from './pages/Bookmarks'
 import Profile from './pages/Profile'
 import User from './pages/User'
 import UserInfo from './pages/UserInfo'
@@ -17,16 +19,19 @@ import Chats, { chatsLoader } from './pages/Chats';
 import Chat from './pages/Chat';
 import Post, { postLoader, postAction } from './pages/Post';
 import Channels, { channelLoader } from './pages/Channels';
+import UserChannel from './pages/UserChannel';
 import Services, { serviceLoader } from './pages/Services';
 import Gig, { gigLoader } from './pages/Gig';
 import Faculties, { facLoader } from './components/Faculties';
 import Faculty, { facultyLoader } from './pages/Faculty';
-import FaHome from './pages/FaHome';
-import Departments from './pages/Departments';
-import Department from './pages/Department';
+import FaHome, { faHomeLoader } from './pages/FaHome';
+import FaInfo, { faInfoLoader } from './pages/FaInfo';
+import Departments, { dptsLoader } from './pages/Departments';
+import Department, { dptLoader } from './pages/Department';
 import Academics, { acadLoader } from './pages/Academics';
 import Search, { searchLoader } from './pages/Search';
-import Signin from './pages/Signin';
+import Result, { resLoader } from './pages/Result';
+// import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import StatusPage from './pages/StatusPage';
 import Reset from './pages/Reset';
@@ -56,17 +61,6 @@ const router = createBrowserRouter([
                 }
             },
             {
-                path: "services",
-                element: <Services />,
-                loader: serviceLoader,
-                children: [
-                    {
-                        path: ':service',
-                        element: <>Holla</>
-                    },
-                ]
-            },
-            {
                 path: "academics",
                 element: <Academics />,
                 loader: acadLoader,
@@ -78,28 +72,30 @@ const router = createBrowserRouter([
                         children: [
                             {
                                 index: true,
+                                loader: ({params})=>redirect(`/academics/faculty/${params.faculty}/activity`)
+                            },
+                            {
                                 path: "activity",
                                 element: <FaHome />
                             },
                             {
                                 path: "info",
-                                element: <Departments />
+                                element: <FaInfo />,
+                                loader: faInfoLoader
                             },
                             {
                                 path: "dpts",
-                                element: <Departments />
+                                element: <Departments />,
+                                loader: dptsLoader
                             },
                             {
                                 path: "dpt/:dpt",
-                                element: <Department />
+                                element: <Department />,
+                                loader: dptLoader
                             }
                         ]
                     }
                 ]
-            },
-            {
-                path: 'channels',
-                element: <Channels />
             },
             {
                 path: "/explore",
@@ -107,14 +103,37 @@ const router = createBrowserRouter([
                 // loader: teamLoader,
                 children: [
                     {
+                        path: 's',
+                        element: <Search />,
+                        loader: searchLoader,
+                        children: [
+                            {
+                                index: true,
+                            //     loader: ()=>redirect('/explore/s/history')
+                            // },
+                            // {
+                            //     path: "history",
+                                element: <>Search History Page</>
+                            },
+                            {
+                                path: "trending",
+                                element: <>Trends Page</>
+                            }
+                        ]
+                    },
+                    {
+                        path: 's/:search',
+                        element: <Result />,
+                        // loader: ()=>{}
+                    },
+                    {
                         path: "job/:jobid",
                         element: <Gig />,
                         loader: gigLoader
                     },
                     {
-                        path: "s",
-                        element: <Search />,
-                        loader: searchLoader,
+                        path: 'channels',
+                        element: <Channels />
                     },
                 ]
             },
@@ -123,6 +142,18 @@ const router = createBrowserRouter([
                 path: "/notifications",
                 element: <Notifications />,
                 // loader: teamLoader,
+                children: [
+                    {
+                        index: true,
+                        loader: ()=> redirect('/notifications/activity')
+                    },{
+                        path: 'activity',
+                        element: <Notivity />
+                    },
+                    {
+                        path: 'bookmarks',
+                        element: <Bookmarks />
+                    }]
             },
             {
                 path: "/user/:username",
@@ -131,8 +162,10 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
+                        loader: ({params})=> redirect(`/user/${params.username}/about`)
+                    },
+                    {
                         path: "about",
-                        replace: true,
                         element: <UserInfo />
                     },
                     {
@@ -141,13 +174,48 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "channels",
-                        element: <User />
+                        element: <UserChannel />
                     },
                     {
                         path: "reviews",
                         element: <User />
                     }
                 ]
+            },
+            {
+                path: "services",
+                element: <Services />,
+                loader: serviceLoader,
+                children: [
+                    {
+                        index: true,
+                        loader: ()=>redirect('/services/all')
+                    },
+                    {
+                        path: "all",
+                        element: <>All Services</>
+                    },
+                    {
+                        path: "graphics",
+                        element: <>Graphics Services</>
+                    },
+                    {
+                        path: "tech",
+                        element: <>Graphics Services</>
+                    },
+                    {
+                        path: "writing",
+                        element: <>Writing/Typing Services</>
+                    },
+                    {
+                        path: "fashion",
+                        element: <>Fashion Services</>
+                    },
+                ]
+            },
+            {
+                path: 'service/:service',
+                element: <>Holla</>
             },
             {
                 path: "/user/:username/chats",
@@ -175,11 +243,11 @@ const router = createBrowserRouter([
                 element: <Settings />,
                 // loader: teamLoader,
             },
-            {
-                path: "/signin",
-                element: <Signin />,
-                // loader: teamLoader,
-            },
+            // {
+            //     path: "/signin",
+            //     element: <Signin />,
+            //     // loader: teamLoader,
+            // },
             {
                 path: "/signup",
                 element: <Signup />,
