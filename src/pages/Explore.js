@@ -48,13 +48,13 @@ function Explore() {
                         <span className="exp-link-txt">Books, Tutorials, Freelancers, Entertainment</span>
                     </div>
                 </Link>
-                <Link to="/services" className={pageCtx.theme=='light' ? "exp-links exp-links-light" : "exp-links exp-links-dark"}>
+                <Link to="/market" className={pageCtx.theme=='light' ? "exp-links exp-links-light" : "exp-links exp-links-dark"}>
                     <div className="exp-link-img-cover">
                         <IonIcon icon={colorPaletteOutline} size="large" className="exp-link-img"></IonIcon>
                     </div>
                     <div className="exp-link-txt-cover">
-                        <span className="exp-link-txt-hd">Services</span>
-                        <span className="exp-link-txt">Artists, Tutors, Freelancers, Jobs, etc.</span>
+                        <span className="exp-link-txt-hd">Market</span>
+                        <span className="exp-link-txt">Products, Services, Auctions, etc.</span>
                     </div>
                 </Link>
                 <div className={pageCtx.theme=='light' ? "exp-links exp-links-light" : "exp-links exp-links-dark"}>
@@ -70,8 +70,8 @@ function Explore() {
                     <div className="exp-link-img-cover">
                         <IonIcon icon={briefcaseOutline} size="large" className="exp-link-img"></IonIcon>
                     </div>
-                    <Link to="channels" className="exp-link-txt-cover">
-                        <span className="exp-link-txt-hd">Gigs</span>
+                    <Link to="jobs" className="exp-link-txt-cover">
+                        <span className="exp-link-txt-hd">Jobs</span>
                         <span className="exp-link-txt">Vacancies, Freelancing</span>
                     </Link>
                 </div>

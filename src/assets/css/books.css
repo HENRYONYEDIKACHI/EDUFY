@@ -1,11 +1,11 @@
-@keyframes s-anime {
+@keyframes bks-anime {
     0% {
         height: 0;
     }100% {
         height: 100%;
     }
 }
-.faculties {
+.books {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -16,29 +16,30 @@
     bottom: 0;
     z-index: 5;
 }
-.fa-hold {
+.bks-hold {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-height: 80%;
     padding: .5em 0;
+    z-index: 7;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     position: absolute;
-    animation-name: s-anime;
+    animation-name: bks-anime;
     animation-duration: .5s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
-.fa-hold-light {
+.bks-hold-light {
     color: var(--fontDark);
     background-color: var(--bgLight);
 }
-.fa-hold-dark {
+.bks-hold-dark {
     color: var(--fontLight);
     background-color: var(--bgDark);
 }
-.fa-head {
+.bks-head {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -47,7 +48,7 @@
     margin: 1% auto;
     /* font-size: 1.2em; */
 }
-.fa-bar {
+.bks-bar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,22 +59,14 @@
     border-radius: 5px;
     box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
 }
-.fa-search {
+.bks-search {
     width: 100%;
     height: 100%;
     padding: 0 2%;
     border: none;
     outline: none;
 }
-.fa-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-    height: 100%;
-    border: none;
-}
-.fa-list {
+.bks-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,7 +75,7 @@
     margin: 1% auto;
     /* border: 1px solid white; */
 }
-.fa-item {
+.bk-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -91,15 +84,15 @@
     margin: 0 auto;
     /* border: 1px solid black; */
 }
-.fa-item-light {
+.bk-item-light {
     color: var(--fontDark);
     box-shadow: 0 0 .5px .5px rgba(0,0,0,.1);
 }
-.fa-item-dark {
+.bk-item-dark {
     color: var(--fontLight);
     box-shadow: 0 0 .5px .5px rgba(255,255,255,.1);
 }
-.fa-img-cover {
+.bk-img-cover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +102,7 @@
     overflow: hidden;
     border-radius: 50%;
 }
-.fa-item-img {
+.bk-item-img {
     height: 100%;
 }
-.fa-item-txt {}
+.bk-item-txt {}

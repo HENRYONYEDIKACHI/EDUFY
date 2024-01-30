@@ -1,0 +1,37 @@
+.ad-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 96%;
+    min-height: 14em;
+    margin: 2% auto;
+    border-radius: 5px;
+    background-color: rgba(0,128,128,.5);
+    background-image: url('../media/pix/ring_banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.2);
+}
+.ad-banner-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    /* width: 80%; */
+    margin: .5em auto .5em .5em;
+    padding: 2% 1em;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    /* background-color: rgba(255,255,255,1); */
+}
+.ad-banner-head {
+    /* font-size: 1.2em; */
+    margin: 1%;
+    /* text-shadow: 1px 1px rgba(140,217,140,.6); */
+}

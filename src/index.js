@@ -20,7 +20,7 @@ import Chat from './pages/Chat';
 import Post, { postLoader, postAction } from './pages/Post';
 import Channels, { channelLoader } from './pages/Channels';
 import UserChannel from './pages/UserChannel';
-import Services, { serviceLoader } from './pages/Services';
+import Market, { martLoader } from './pages/Market';
 import Gig, { gigLoader } from './pages/Gig';
 import Faculties, { facLoader } from './components/Faculties';
 import Faculty, { facultyLoader } from './pages/Faculty';
@@ -29,6 +29,7 @@ import FaInfo, { faInfoLoader } from './pages/FaInfo';
 import Departments, { dptsLoader } from './pages/Departments';
 import Department, { dptLoader } from './pages/Department';
 import Academics, { acadLoader } from './pages/Academics';
+import Books from './pages/Books';
 import Search, { searchLoader } from './pages/Search';
 import Result, { resLoader } from './pages/Result';
 // import Signin from './pages/Signin';
@@ -65,6 +66,15 @@ const router = createBrowserRouter([
                 element: <Academics />,
                 loader: acadLoader,
                 children: [
+                    {
+                        path: "books",
+                        element: <Books />
+                    },
+                    {
+                        path: "faculties",
+                        element: <Faculties />,
+                        loader: facLoader,
+                    },
                     {
                         path: "faculty/:faculty",
                         element: <Faculty />,
@@ -126,15 +136,6 @@ const router = createBrowserRouter([
                         element: <Result />,
                         // loader: ()=>{}
                     },
-                    {
-                        path: "job/:jobid",
-                        element: <Gig />,
-                        loader: gigLoader
-                    },
-                    {
-                        path: 'channels',
-                        element: <Channels />
-                    },
                 ]
             },
             
@@ -183,13 +184,13 @@ const router = createBrowserRouter([
                 ]
             },
             {
-                path: "services",
-                element: <Services />,
-                loader: serviceLoader,
+                path: "market",
+                element: <Market />,
+                loader: martLoader,
                 children: [
                     {
                         index: true,
-                        loader: ()=>redirect('/services/all')
+                        loader: ()=>redirect('/market/all')
                     },
                     {
                         path: "all",
@@ -211,11 +212,27 @@ const router = createBrowserRouter([
                         path: "fashion",
                         element: <>Fashion Services</>
                     },
+                    {
+                        path: "pd/:pd",
+                        element: <>Product Page</>,
+                        loader: ()=>{'holla'},
+                    }
                 ]
             },
             {
-                path: 'service/:service',
-                element: <>Holla</>
+                path: 'jobs',
+                element: <>Jobs Page</>,
+                children: [
+                    {
+                        path: ":job/:jobid",
+                        element: <Gig />,
+                        loader: gigLoader
+                    },
+                ]
+            },
+            {
+                path: 'channels',
+                element: <Channels />
             },
             {
                 path: "/user/:username/chats",

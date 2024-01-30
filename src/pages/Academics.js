@@ -10,29 +10,12 @@ import '../assets/css/academics.css'
 
 export const acadLoader = async () => {
     const institutes = []
-    const facData = [
-        {
-            id: 1,
-            faculty: 'Engineering',
-            code: 'fen'
-        },
-        {
-            id: 2,
-            faculty: 'Science',
-            code: 'fos'
-        },
-        {
-            id: 3,
-            faculty: 'Management Science',
-            code: 'fms'
-        },
-    ]
-    return { facData, institutes }
+    return { institutes }
 }
 
 export default function Academics() {
     const {pageCtx, authCtx} = useOutletContext()
-    const { facData, institutes } = useLoaderData()
+    const { institutes } = useLoaderData()
     const ring = require("../assets/media/pix/ring_banner.png")
     return (
         <div className="base">
@@ -44,7 +27,7 @@ export default function Academics() {
                     </div>
                     <span className={pageCtx.theme=='light' ? "acd-head-txt acd-head-txt-light" : "acd-head-txt acd-head-txt-dark"}>Books. Past Questions. Tutorials. Etc.</span>
                 </div>
-                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                <Link to="books" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
                         <IonIcon icon={bookOutline} size="large" className="acd-link-img"></IonIcon>
                     </div>
@@ -52,8 +35,8 @@ export default function Academics() {
                         <span className="acd-link-txt-hd">Books</span>
                         <span className="acd-link-txt">Past Questions Textbooks, Research Papers, etc.</span>
                     </div>
-                </div>
-                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"} onClick={()=>pageCtx.toggleFaculties()}>
+                </Link>
+                <Link to="faculties" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
                         <IonIcon icon={schoolOutline} size="large" className="acd-link-img"></IonIcon>
                     </div>
@@ -61,7 +44,7 @@ export default function Academics() {
                         <span className="acd-link-txt-hd">Faculties</span>
                         <span className="acd-link-txt">Staff, Departments, Labs, etc</span>
                     </div>
-                </div>
+                </Link>
                 <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
                     <div className="acd-link-img-cover">
                         <IonIcon icon={calendarOutline} size="large" className="acd-link-img"></IonIcon>
@@ -90,9 +73,9 @@ export default function Academics() {
                     </div>
                 </div>
             </div>
-            {pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''}
             <BottomNav />
             <Outlet context={{ pageCtx, authCtx }} />
+            {/*pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''*/}
         </div>
     )
 }

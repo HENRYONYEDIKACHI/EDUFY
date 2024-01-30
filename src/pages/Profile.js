@@ -101,7 +101,7 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
                             {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Channels</div>)}
                         </NavLink>
                         <NavLink to="reviews" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
-                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Reviews</div>)}
+                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>My Jobs</div>)}
                         </NavLink>
                     </div>
                 </div>

@@ -1,6 +1,10 @@
-function Posts({ setPage, page }) {
+import PostItem from '../components/PostItem'
+
+function PostFactory({ posts }) {
     return (
-        <div>All Posts</div>
+        <div className="pt-factory">
+            {posts.map((pt)=>())
+        </div>
     )
 }
 

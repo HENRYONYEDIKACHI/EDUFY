@@ -180,7 +180,8 @@ function App() {
     
     const [showfaculties, setFaculties] = useState(false)
     const toggleFaculties = async () => {
-        {showfaculties? setFaculties(false) : setFaculties(true)}
+        window.history.back()
+        // {showfaculties? setFaculties(false) : setFaculties(true)}
     }
     const [search, setSearch] = useState(false)
     const toggleSearch = async () => {
