@@ -57,20 +57,20 @@ export default function Home({ viewOption, visibility, setVisibility, toggleOpti
     const ring = require('../assets/media/pix/ring_banner.png')
     return (
         <div className="base">
-            <StatusBar title="Edufy" />
+            <StatusBar title="Home" />
             <div className="base-cover">
                 <AdBanner facData={facData} showfaculties={pageCtx.showfaculties} toggleFaculties={pageCtx.toggleFaculties} />
                 <div className="pop-serve">
                     <div className={pageCtx.theme=='light' ? "ft-div ft-div-light" : "ft-div ft-div-dark"}>
-                        <h2 className="ft-txt">Categories</h2>
-                        <Link to="jobs" className="ft-more">See more</Link>
+                        <h2 className="ft-txt">Quick Links</h2>
+                        {/*<Link to="jobs" className="ft-more">See more</Link>*/}
                     </div>
                     <div className="pop-cover">
                         <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <div className="pop-img-cover">
                                 <img className="pop-img" src={ring} />
                             </div>
-                            <span className={pageCtx.theme=='light' ? "pop-txt pop-txt-light" : "pop-txt pop-txt-dark"}>Technology</span>
+                            <span className={pageCtx.theme=='light' ? "pop-txt pop-txt-light" : "pop-txt pop-txt-dark"}>Books</span>
                         </Link>
                         <Link className={pageCtx.theme=='light' ? "pop-item pop-item-light" : "pop-item pop-item-dark"}>
                             <div className="pop-img-cover">

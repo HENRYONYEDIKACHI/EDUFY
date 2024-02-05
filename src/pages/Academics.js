@@ -27,55 +27,57 @@ export default function Academics() {
                     </div>
                     <span className={pageCtx.theme=='light' ? "acd-head-txt acd-head-txt-light" : "acd-head-txt acd-head-txt-dark"}>Books. Past Questions. Tutorials. Etc.</span>
                 </div>
-                <Link to="books" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
-                    <div className="acd-link-img-cover">
-                        <IonIcon icon={bookOutline} size="large" className="acd-link-img"></IonIcon>
+                <div className="acd-link-hold">
+                    <Link to="books" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                        <div className="acd-link-img-cover">
+                            <IonIcon icon={bookOutline} size="large" className="acd-link-img"></IonIcon>
+                        </div>
+                        <div className="acd-link-txt-cover">
+                            <span className="acd-link-txt-hd">Books</span>
+                            <span className="acd-link-txt">Past Questions Textbooks, Research Papers, etc.</span>
+                        </div>
+                    </Link>
+                    <Link to="faculties" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                        <div className="acd-link-img-cover">
+                            <IonIcon icon={schoolOutline} size="large" className="acd-link-img"></IonIcon>
+                        </div>
+                        <div className="acd-link-txt-cover">
+                            <span className="acd-link-txt-hd">Faculties</span>
+                            <span className="acd-link-txt">Staff, Departments, Labs, etc</span>
+                        </div>
+                    </Link>
+                    <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                        <div className="acd-link-img-cover">
+                            <IonIcon icon={calendarOutline} size="large" className="acd-link-img"></IonIcon>
+                        </div>
+                        <div className="acd-link-txt-cover">
+                            <span className="acd-link-txt-hd">Events</span>
+                            <span className="acd-link-txt">Sports Festivals, Workshops And Seminars</span>
+                        </div>
                     </div>
-                    <div className="acd-link-txt-cover">
-                        <span className="acd-link-txt-hd">Books</span>
-                        <span className="acd-link-txt">Past Questions Textbooks, Research Papers, etc.</span>
+                    <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                        <div className="acd-link-img-cover">
+                            <IonIcon icon={globeOutline} size="large" className="acd-link-img"></IonIcon>
+                        </div>
+                        <div className="acd-link-txt-cover">
+                            <span className="acd-link-txt-hd">SUG</span>
+                            <span className="acd-link-txt">Offices, Elections</span>
+                        </div>
                     </div>
-                </Link>
-                <Link to="faculties" className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
-                    <div className="acd-link-img-cover">
-                        <IonIcon icon={schoolOutline} size="large" className="acd-link-img"></IonIcon>
-                    </div>
-                    <div className="acd-link-txt-cover">
-                        <span className="acd-link-txt-hd">Faculties</span>
-                        <span className="acd-link-txt">Staff, Departments, Labs, etc</span>
-                    </div>
-                </Link>
-                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
-                    <div className="acd-link-img-cover">
-                        <IonIcon icon={calendarOutline} size="large" className="acd-link-img"></IonIcon>
-                    </div>
-                    <div className="acd-link-txt-cover">
-                        <span className="acd-link-txt-hd">Events</span>
-                        <span className="acd-link-txt">Sports Festivals, Workshops And Seminars</span>
-                    </div>
-                </div>
-                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
-                    <div className="acd-link-img-cover">
-                        <IonIcon icon={globeOutline} size="large" className="acd-link-img"></IonIcon>
-                    </div>
-                    <div className="acd-link-txt-cover">
-                        <span className="acd-link-txt-hd">SUG</span>
-                        <span className="acd-link-txt">Offices, Elections</span>
-                    </div>
-                </div>
-                <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
-                    <div className="acd-link-img-cover">
-                        <IonIcon icon={easelOutline} size="large" className="acd-link-img"></IonIcon>
-                    </div>
-                    <div className="acd-link-txt-cover">
-                        <span className="acd-link-txt-hd">Tutorials</span>
-                        <span className="acd-link-txt">Training Centers,  Videos, Channels</span>
+                    <div className={pageCtx.theme=='light' ? "acd-links acd-links-light" : "acd-links acd-links-dark"}>
+                        <div className="acd-link-img-cover">
+                            <IonIcon icon={easelOutline} size="large" className="acd-link-img"></IonIcon>
+                        </div>
+                        <div className="acd-link-txt-cover">
+                            <span className="acd-link-txt-hd">Tutorials</span>
+                            <span className="acd-link-txt">Training Centers,  Videos, Channels</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <BottomNav />
-            <Outlet context={{ pageCtx, authCtx }} />
             {/*pageCtx.showfaculties ? <Faculties facData={facData} toggleFaculties={pageCtx.toggleFaculties} /> : ''*/}
+            <Outlet context={{ pageCtx, authCtx }} />
+            <BottomNav />
         </div>
     )
 }

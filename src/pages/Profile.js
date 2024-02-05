@@ -42,67 +42,54 @@ export default function Profile({ viewOption, visibility, setVisibility, toggleO
             <div className="base-cover">
                 <div className={pageCtx.theme=='light' ? "info-card info-card-light" : "info-card info-card-dark"}>
                     <div className="card-details" >
-                        {/*<div className="pro-cover" ></div>*/}
-                        <div className="cover-frame">
-                            <img src={ring} className="cover-img" />
+                            {/*<img src={ring} className="cover-img" />*/}
                             <div className="pro-avatar-cover" >
                                 {!authCtx.user.loggedIn ? <IonIcon icon={person} size="large" color="teal" className="pro-avatar" ></IonIcon> :  <img src={ring} className="pro-avatar" alt="Avatar" />}
                             </div>
-                        </div>
                     </div>
                     &nbsp;
-                    <div className="user-titles" >
-                        {authCtx.user.username === userPath ? 
-                        <div className="fullname-cover">
-                            <h1 className={pageCtx.theme=='light' ? "fullname u-link-cover-light" : "fullname u-link-cover-dark"}>{authCtx.user.firstname} {authCtx.user.lastname}</h1>
-                            <h3 className="username">@{authCtx.user.username}</h3>
-                        </div> : 
-                        <div className="fullname-cover">
-                            <h1 className="fullname">{userPath}</h1>
-                            <h3 className="username">@{userPath}</h3>
-                        </div>}
-                        <div className="collection">
-                            {authCtx.user.username === userPath ? <>
-                                <div className="cards-actions" >
-                                    { authCtx.user.username === userPath ? <>
-                                    {/*<div onClick={()=> pageCtx.toggleCreate()} className="act-btn">
-                                        <IonIcon icon={addCircleOutline} style={pageCtx.iconStyle}
-                                        className="act-btn-icon"></IonIcon>
-                                    </div>*/}
-                                    {/*<Link to={`/user/${authCtx.user.username}/info`} className="act-btn">
-                                        <IonIcon icon={informationCircleOutline} style={pageCtx.iconStyle}
-                                        className="act-btn-icon"></IonIcon>
-                                    </Link>*/}
-                                    {/*<Link to={`/user/${authCtx.user.username}/chats`} className="act-btn">
-                                        <IonIcon icon={chatbubbleOutline} style={pageCtx.iconStyle}
-                                        className="act-btn-icon"></IonIcon>
-                                    </Link>*/} </> : <>
-                                    <div className="act-btn">
-                                        <IonIcon icon={personAddOutline} style={pageCtx.iconStyle}
-                                        className="act-btn-icon"></IonIcon>
-                                    </div>
-                                    <div className="act-btn">
-                                        <IonIcon icon={personRemoveOutline} style={pageCtx.iconStyle}
-                                        className="act-btn-icon"></IonIcon>
-                                    </div>
-                                    </> }
-                                </div>
-                             </> : ''}
-                        </div>
-                    </div>
                     <div className="user-links">
-                        <NavLink to="about" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
-                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>About</div>)}
-                        </NavLink>
-                        {/*<NavLink to="gigs" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
-                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Gigs</div>)}
-                        </NavLink>*/}
-                        <NavLink to="channels" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
-                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>Channels</div>)}
-                        </NavLink>
-                        <NavLink to="reviews" className={pageCtx.theme=='light' ? "u-link-cover u-link-cover-light" : "u-link-cover u-link-cover-dark"}>
-                            {({isActive, isPending})=> (<div className={isActive ? "u-link u-link-active" : "u-link"}>My Jobs</div>)}
-                        </NavLink>
+                        <div className="user-titles" >
+                            {
+                                authCtx.user.username === userPath ? 
+                                <div className="fullname-cover">
+                                    <h1 className={pageCtx.theme=='light' ? "fullname u-link-cover-light" : "fullname u-link-cover-dark"}>{authCtx.user.firstname} {authCtx.user.lastname}</h1>
+                                    <h3 className="username">@{authCtx.user.username}</h3>
+                                </div> : 
+                                <div className="fullname-cover">
+                                    <h1 className="fullname">{userPath}</h1>
+                                    <h3 className="username">@{userPath}</h3>
+                                </div>
+                            }
+                        </div>
+                    <div className="collection">
+                        {authCtx.user.username === userPath ? <>
+                            <div className="cards-actions" >
+                                { authCtx.user.username === userPath ? <>
+                                <div onClick={()=> pageCtx.toggleCreate()} className="act-btn">
+                                    <IonIcon icon={addCircleOutline} style={pageCtx.iconStyle}
+                                    className="act-btn-icon"></IonIcon>
+                                </div>
+                                <Link to={`/user/${authCtx.user.username}/info`} className="act-btn">
+                                    <IonIcon icon={informationCircleOutline} style={pageCtx.iconStyle}
+                                    className="act-btn-icon"></IonIcon>
+                                </Link>
+                                <Link to={`/user/${authCtx.user.username}/chats`} className="act-btn">
+                                    <IonIcon icon={chatbubbleOutline} style={pageCtx.iconStyle}
+                                    className="act-btn-icon"></IonIcon>
+                                </Link> </> : <>
+                                <div className="act-btn">
+                                    <IonIcon icon={personAddOutline} style={pageCtx.iconStyle}
+                                    className="act-btn-icon"></IonIcon>
+                                </div>
+                                <div className="act-btn">
+                                    <IonIcon icon={personRemoveOutline} style={pageCtx.iconStyle}
+                                    className="act-btn-icon"></IonIcon>
+                                </div>
+                                </> }
+                            </div>
+                         </> : ''}
+                    </div>
                     </div>
                 </div>
                 <Outlet context={{pageCtx, authCtx}} />

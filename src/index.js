@@ -63,12 +63,16 @@ const router = createBrowserRouter([
             },
             {
                 path: "academics",
-                element: <Academics />,
-                loader: acadLoader,
                 children: [
                     {
+                        index: true,
+                        element: <Academics />,
+                        loader: acadLoader,
+                    },
+                    {
                         path: "books",
-                        element: <Books />
+                        element: <Books />,
+                        loader: ()=>{return null}
                     },
                     {
                         path: "faculties",
@@ -154,16 +158,17 @@ const router = createBrowserRouter([
                     {
                         path: 'bookmarks',
                         element: <Bookmarks />
-                    }]
+                    }
+                ]
             },
             {
                 path: "/user/:username",
-                element: <Profile />,
                 // loader: teamLoader,
                 children: [
                     {
                         index: true,
-                        loader: ({params})=> redirect(`/user/${params.username}/about`)
+                        element: <Profile />,
+                        // loader: ({params})=> redirect(`/user/${params.username}/about`)
                     },
                     {
                         path: "about",

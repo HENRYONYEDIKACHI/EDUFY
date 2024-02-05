@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { useOutletContext, Link, NavLink } from 'react-router-dom'
 
 import { IonIcon } from '@ionic/react';
-import { chatbubble, chatbubbleOutline, menu, menuOutline, closeOutline, notifications, notificationsOutline, sunnyOutline, moonOutline } from 'ionicons/icons'
+import { chatbubble, chatbubbleOutline, menu, menuOutline, closeOutline, notifications, notificationsOutline, sunnyOutline, moonOutline, searchOutline, search } from 'ionicons/icons'
 import { PageContext } from '../ctx/PageContext'
 import { AuthContext } from '../ctx/AuthContext'
 
@@ -38,6 +38,9 @@ function StatusBar({ title, auths }) {
                     {/* authCtx.user.username === 'Guest' ? '' : <Link to={`/user/${authCtx.user.username}/chats`} className="topBarItem chatLink">
                         <IonIcon icon={chatbubbleOutline} style={pageCtx.iconStyle}></IonIcon>
                     </Link>*/}
+                    <div className="topBarItem">
+                        <IonIcon icon={searchOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"} onClick={()=>pageCtx.toggleTheme()}></IonIcon>
+                    </div>
                     <div className="topBarItem">
                         <IonIcon icon={pageCtx.theme=='light' ? moonOutline : sunnyOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"} onClick={()=>pageCtx.toggleTheme()}></IonIcon>
                     </div>
