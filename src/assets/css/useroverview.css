@@ -1,0 +1,39 @@
+.user-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.options {}
+.options-btn {
+    display: flex;
+    justify-content: center;
+    width: 92%;
+    height: 10em;
+    margin: 2% auto;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+}
+.options-btn-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    padding: .5% 1%;
+    margin: 1%;
+    font-weight: bold;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+    border-radius: 5px;
+    color: black;
+    z-index: 1;
+}
+.options-btn-img {
+    height: 100%;
+    width: 100%;
+}

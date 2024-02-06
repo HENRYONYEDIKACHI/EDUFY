@@ -12,7 +12,7 @@ import Notifications from './pages/Notifications'
 import Notivity from './pages/Notivity'
 import Bookmarks from './pages/Bookmarks'
 import Profile from './pages/Profile'
-import User from './pages/User'
+import UserOverview from './pages/UserOverview'
 import UserInfo from './pages/UserInfo'
 import Settings from './pages/Settings';
 import Chats, { chatsLoader } from './pages/Chats';
@@ -60,6 +60,25 @@ const router = createBrowserRouter([
                     console.log(args)
                     return false
                 }
+            },
+            {
+                path: 's',
+                children: [
+                    {
+                        index: true,
+                        element: <Search />,
+                        loader: searchLoader,
+                    },
+                    {
+                        path: 's/:search',
+                        element: <Result />,
+                        // loader: ()=>{}
+                    },
+                    {
+                        path: "trending",
+                        element: <>Trends Page</>
+                    }
+                ]
             },
             {
                 path: "academics",
@@ -116,30 +135,6 @@ const router = createBrowserRouter([
                 element: <Explore />,
                 // loader: teamLoader,
                 children: [
-                    {
-                        path: 's',
-                        element: <Search />,
-                        loader: searchLoader,
-                        children: [
-                            {
-                                index: true,
-                            //     loader: ()=>redirect('/explore/s/history')
-                            // },
-                            // {
-                            //     path: "history",
-                                element: <>Search History Page</>
-                            },
-                            {
-                                path: "trending",
-                                element: <>Trends Page</>
-                            }
-                        ]
-                    },
-                    {
-                        path: 's/:search',
-                        element: <Result />,
-                        // loader: ()=>{}
-                    },
                 ]
             },
             
@@ -163,20 +158,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/user/:username",
+                element: <Profile />,
                 // loader: teamLoader,
                 children: [
                     {
                         index: true,
-                        element: <Profile />,
-                        // loader: ({params})=> redirect(`/user/${params.username}/about`)
-                    },
-                    {
+                        element: <UserOverview />
+                    },{
                         path: "about",
                         element: <UserInfo />
                     },
                     {
                         path: "gigs",
-                        element: <User />
+                        element: <UserOverview />
                     },
                     {
                         path: "channels",
@@ -184,7 +178,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "reviews",
-                        element: <User />
+                        element: <UserOverview />
                     }
                 ]
             },

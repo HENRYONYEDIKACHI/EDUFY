@@ -1,6 +1,6 @@
 .info-card {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -15,11 +15,11 @@
 }
 .card-details {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    /* height: 4em; */
-    /* width: 100%; */
+    /* height: 10em; */
+    width: 100%;
     margin: 0 2%;
     /* border: 1px solid black; */
     position: relative;
@@ -30,7 +30,7 @@
     align-items: center;
     width: 8em;
     height: 8em;
-    margin: 1%;
+    margin: auto;
     border-radius: 50%;
     color: teal;
     overflow: hidden;
@@ -53,65 +53,31 @@
     /* width: 100%; */
     height: 100%;
 }
-.user-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 3em;
-    /* margin: 1% auto; */
-    padding: 0 1%;
-    /* border-radius: 5px; */
-    /* border-bottom: 1px solid rgba(0,0,0,.05) */
-}
-.user-titles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1% 1%;
-    margin: 4% 3%;
-    /* border: 1px solid black; */
-}
-.fullname-cover {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 3em;
-    width: 100%;
-    /* border: 1px solid black; */
-    font-weight: bold;
-}
-.fullname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4em;
-    /* margin: 1% 0; */
-    /* border: 1px solid black; */
-}
-.username {
-    font-size: 1.1em;
-    color: rgb(0, 128, 128);
-    /* border: 1px solid black; */
-}
 .collection {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* width: 100%; */
+    width: 60%;
+    margin: auto;
     /* border: 1px solid black; */
 }
+/* .card-act-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+    margin: 1% 0;
+    border: 1px solid black;
+} */
 .cards-actions {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* height: 3em; */
-    /* width: 50%; */
+    height: 4em;
+    width: 100%;
+    margin: 1% 0;
     /* border: 1px solid black; */
 }
 .act-btn {
@@ -130,6 +96,93 @@
     /* width: 5em; */
     /* border: 1px; */
     /* color: white; */
+    /* border: 1px solid black; */
+}
+.hint-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 3em;
+    margin: 1%;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgba(0,128,128,1);
+}
+.subs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+    margin: 1% 0;
+}
+.follows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-weight: bold;
+    /* border: 1px solid black; */
+}
+.follows>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 30%; */
+    width: 100%;
+}
+.user-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    /* height: 3em; */
+    /* margin: 1% auto; */
+    /* padding: 0 1%; */
+    /* border-radius: 5px; */
+    /* border: 1px solid rgba(0,0,0,.05) */
+}
+.user-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1% 1%;
+    /* margin: 4% 3%; */
+    /* border: 1px solid black; */
+}
+.fullname-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 100%;
+    padding: 0 1%;
+    /* border: 1px solid black; */
+    font-weight: bold;
+}
+.fullname {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.4em;
+    width: 100%;
+    /* margin: 1% 0; */
+    /* border: 1px solid black; */
+}
+.username {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 1.1em;
+    color: rgb(0, 128, 128);
     /* border: 1px solid black; */
 }
 .u-link-cover {

@@ -38,18 +38,18 @@ function StatusBar({ title, auths }) {
                     {/* authCtx.user.username === 'Guest' ? '' : <Link to={`/user/${authCtx.user.username}/chats`} className="topBarItem chatLink">
                         <IonIcon icon={chatbubbleOutline} style={pageCtx.iconStyle}></IonIcon>
                     </Link>*/}
-                    <div className="topBarItem">
-                        <IonIcon icon={searchOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"} onClick={()=>pageCtx.toggleTheme()}></IonIcon>
-                    </div>
-                    <div className="topBarItem">
+                    <Link to="/s" className="topBarItem">
+                        <IonIcon icon={searchOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"}></IonIcon>
+                    </Link>
+                    {/*<div className="topBarItem">
                         <IonIcon icon={pageCtx.theme=='light' ? moonOutline : sunnyOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"} onClick={()=>pageCtx.toggleTheme()}></IonIcon>
-                    </div>
+                    </div>*/}
                     <NavLink to='/notifications' className="topBarItem" >
                         {({isActive, isPending})=> (<IonIcon icon={isActive ? notifications : notificationsOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"}></IonIcon>)}
                     </NavLink>
-                    <div className="topBarItem menuLink" onClick={()=>toggleMenu()}>
+                    {/*<div className="topBarItem menuLink" onClick={()=>toggleMenu()}>
                         <IonIcon icon={menuOutline} className={pageCtx.theme=='light' ? "topBarIcon topBarIconLink" : "topBarIcon topBarIconDark"}></IonIcon>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
             {menu ? <Menu toggleMenu={toggleMenu} /> : ''}

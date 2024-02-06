@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
 import { useOutletContext, Link, useParams, Outlet, NavLink, useLocation } from 'react-router-dom'
 
-import '../assets/css/user.css'
+import '../assets/css/userinfo.css'
 
 export default function UserInfo() {
     const {pageCtx, authCtx} = useOutletContext()

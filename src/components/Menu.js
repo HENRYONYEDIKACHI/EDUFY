@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { useOutletContext, Link } from 'react-router-dom'
 
-import User from '../pages/User'
+import UserOverview from '../pages/UserOverview'
 import Settings from '../pages/Settings'
 
 import BackFill from './BackFill'

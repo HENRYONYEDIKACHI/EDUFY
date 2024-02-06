@@ -11,6 +11,7 @@ import './App.css'
 import Cookies from 'universal-cookie'
 
 function App() {
+    const ring = require('./assets/media/pix/ring_banner.png')
     const font = require('./assets/fonts/Fredoka-Regular.ttf')
     const cookies = new Cookies()
     const anime = require("animejs")
@@ -191,7 +192,7 @@ function App() {
             setSearch(true)
         }
     }
-    const pageCtx = {menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties, rootVar, theme, toggleTheme, search, toggleSearch}//, postSocket, chatSocket, socketIsOpen}
+    const pageCtx = {ring, menuView, toggleMenu, iconStyle, borderStyle, apiRoute, anime, toggleCreate, showCreate, toggleOption, showfaculties, toggleFaculties, rootVar, theme, toggleTheme, search, toggleSearch}//, postSocket, chatSocket, socketIsOpen}
     const authCtx = {user, onLogIn, onLogOut, showLogin, toggleLogin}
     
     return (
